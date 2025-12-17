@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html class="light" lang="kk">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Сынып журналы - Class Grades</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;family=Noto+Sans:wght@100..900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "primary-hover": "#0f6bd0",
+                        "background-light": "#f8fafc",
+                        "background-dark": "#101922",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1e293b",
+                        "text-main-light": "#0f172a",
+                        "text-main-dark": "#f1f5f9",
+                        "text-secondary-light": "#64748b",
+                        "text-secondary-dark": "#94a3b8",
+                        "border-light": "#e2e8f0",
+                        "border-dark": "#334155",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .grade-cell {
+            transition: all 0.2s;
+        }
+
+        .grade-cell:hover {
+            background-color: rgba(19, 127, 236, 0.05);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-text-main-light dark:text-text-main-dark min-h-screen flex flex-col">
+    <!-- Top Navigation Bar -->
+    <header
+        class="h-16 bg-surface-light dark:bg-surface-dark border-b border-border-light dark:border-border-dark flex items-center justify-between px-6 lg:px-10 shrink-0 z-20 sticky top-0">
+        <div class="flex items-center gap-4">
+            <div class="size-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined">school</span>
+            </div>
+            <h1
+                class="text-lg lg:text-xl font-bold tracking-tight text-text-main-light dark:text-text-main-dark hidden sm:block">
+                Qazaq Tili &amp; Ädebieti
+            </h1>
+        </div>
+        <div class="flex items-center gap-6">
+            <div class="flex bg-slate-100 dark:bg-slate-800 rounded-lg p-1">
+                <a href="#"
+                    class="px-4 py-1.5 rounded-md bg-white dark:bg-slate-700 shadow-sm text-xs font-bold text-primary transition-all">Qaz</a>
+                <a href="class_grades_ru.html" id="ruLink"
+                    class="px-4 py-1.5 rounded-md text-text-secondary-light dark:text-text-secondary-dark hover:text-text-main-light dark:hover:text-text-main-dark text-xs font-bold transition-all">Rus</a>
+            </div>
+            <!-- User Profile -->
+            <div class="size-9 rounded-full bg-slate-200 dark:bg-slate-700"></div>
+        </div>
+    </header>
+
+    <div class="flex flex-1">
+        <!-- Sidebar Navigation -->
+        <aside
+            class="w-64 bg-surface-light dark:bg-surface-dark border-r border-border-light dark:border-border-dark hidden lg:flex flex-col justify-between py-6 px-4 sticky top-16 h-[calc(100vh-4rem)]">
+            <nav class="flex flex-col gap-2">
+                <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-secondary-light dark:text-text-secondary-dark hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary transition-colors group"
+                    href="teacher_dashboard.html">
+                    <span class="material-symbols-outlined text-[22px] group-hover:text-primary">dashboard</span>
+                    <span class="text-sm font-medium">Басты бет</span>
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary transition-colors"
+                    href="grades.html">
+                    <span class="material-symbols-outlined filled text-[22px]">star</span>
+                    <span class="text-sm font-bold">Бағалар</span>
+                </a>
+            </nav>
+            <div class="px-4">
+                <button
+                    class="logout-btn flex w-full cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-10 px-4 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-text-main-light dark:text-white text-sm font-bold transition-colors">
+                    <span class="material-symbols-outlined" style="font-size: 20px;">logout</span>
+                    <span class="truncate">Шығу</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 bg-background-light dark:bg-background-dark p-4 lg:p-8 scroll-smooth">
+            <div class="max-w-[1600px] mx-auto space-y-8">
+                <div>
+                    <div
+                        class="flex items-center gap-2 text-sm text-text-secondary-light dark:text-text-secondary-dark mb-4">
+                        <a href="grades.html" class="hover:text-primary hover:underline">Бағалар</a>
+                        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                        <span class="font-medium text-text-main-light dark:text-text-main-dark"
+                            id="breadcrumbClass">Сынып</span>
+                    </div>
+                    <!-- Header -->
+                    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+                        <div>
+                            <h2 class="text-3xl font-bold tracking-tight text-text-main-light dark:text-text-main-dark"
+                                id="headerClassName">
+                                <span
+                                    class="animate-pulse bg-slate-200 dark:bg-slate-700 rounded h-8 w-48 inline-block"></span>
+                            </h2>
+                            <p class="text-text-secondary-light dark:text-text-secondary-dark mt-1">Тоқсандық бағалау
+                                журналы</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grades Table -->
+                <div
+                    class="bg-surface-light dark:bg-surface-dark rounded-2xl border border-border-light dark:border-border-dark overflow-hidden shadow-sm">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse" id="gradesTable">
+                            <thead>
+                                <tr class="bg-slate-50 dark:bg-slate-800/50 border-b border-border-light dark:border-border-dark"
+                                    id="tableHeaderRow">
+                                    <th
+                                        class="p-4 text-sm font-bold text-text-secondary-light dark:text-text-secondary-dark border-r border-border-light dark:border-border-dark min-w-[200px] sticky left-0 bg-slate-50 dark:bg-slate-800/50 z-10">
+                                        Оқушының аты</th>
+                                    <!-- Dynamic headers will be added here -->
+                                </tr>
+                            </thead>
+                            <tbody id="gradesTableBody">
+                                <tr>
+                                    <td class="p-8 text-center" colspan="100">
+                                        <div class="flex flex-col items-center justify-center">
+                                            <span
+                                                class="material-symbols-outlined text-4xl text-slate-400 mb-2 animate-spin">refresh</span>
+                                            <span class="text-slate-500">Деректер жүктелуде...</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script type="module">
+        import { auth, db } from "./js/firebase-config.js";
+        import { doc, getDoc, collection, query, where, getDocs, orderBy } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+        import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+        onAuthStateChanged(auth, async (user) => {
+            if (!user) {
+                window.location.href = 'login.html';
+            } else {
+                const urlParams = new URLSearchParams(window.location.search);
+                const classId = urlParams.get('id');
+
+                if (classId) {
+                    const ruLink = document.getElementById('ruLink');
+                    if (ruLink) ruLink.href = `class_grades_ru.html?id=${classId}`;
+
+                    await loadClassData(classId, user.uid);
+                } else {
+                    window.location.href = 'grades.html';
+                }
+            }
+        });
+
+        const logoutBtn = document.querySelector('.logout-btn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', async () => {
+                await signOut(auth);
+                window.location.href = 'index.html';
+            });
+        }
+
+        async function loadClassData(classId, teacherId) {
+            try {
+                // 1. Fetch Class Info
+                const classDoc = await getDoc(doc(db, "classes", classId));
+                if (!classDoc.exists()) {
+                    alert('Сынып табылмады');
+                    return;
+                }
+                const classData = classDoc.data();
+                const grade = classData.grade;
+                const className = `${grade}"${classData.name}"`;
+
+                document.getElementById('headerClassName').textContent = `${className} сыныбының журналы`;
+                document.getElementById('breadcrumbClass').textContent = className;
+
+                // 2. Fetch Students
+                const studentsQ = query(collection(db, "students"), where("classId", "==", classId));
+                const studentsSnap = await getDocs(studentsQ);
+                const students = [];
+                studentsSnap.forEach(d => students.push({ id: d.id, ...d.data() }));
+                // Sort by name
+                students.sort((a, b) => a.name.localeCompare(b.name));
+
+                // 3. Fetch Topics (Assignments) for this Grade
+                // Note: ideally filtered by teacher's subject too, 
+                // but for now assuming all topics for this grade created by teacher match.
+                // Or maybe fetch topics from teacher's subjects? 
+                // Let's query topics by grade and subjectId IN (teacher's subjects).
+                // Simplification for MVP: Fetch topics by grade.
+                const topicsQ = query(
+                    collection(db, "topics"),
+                    where("grade", "==", grade),
+                    // where("subjectId", "in", ...) // Complex if multiple subjects
+                );
+                const topicsSnap = await getDocs(topicsQ);
+                const topics = [];
+                topicsSnap.forEach(d => topics.push({ id: d.id, ...d.data() }));
+
+                // Filter topics that have tests? Or showing all topics? 
+                // Let's process topics to find "Tests" inside them.
+                // Structure: topic.assignments = [{ type: 'test', ... }]
+                // We want columns for each TEST.
+                const assessments = [];
+                topics.forEach(topic => {
+                    if (topic.assignments && Array.isArray(topic.assignments)) {
+                        topic.assignments.forEach((assign, index) => {
+                            if (assign.type === 'test') {
+                                assessments.push({
+                                    topicId: topic.id,
+                                    topicTitle: topic.title,
+                                    testIndex: index,
+                                    title: assign.title || 'Тест', // Might name it "Topic Title - Test"
+                                    date: topic.lessonDate || ''
+                                });
+                            }
+                        });
+                    }
+                });
+
+                // Sort assessments by date if available
+                assessments.sort((a, b) => {
+                    if (a.date && b.date) return new Date(a.date) - new Date(b.date);
+                    return 0;
+                });
+
+                // 4. Fetch Grades for each assessment
+                // To avoid N+1, maybe fetch all results for these topics?
+                // Iterating for now as it's cleaner to implement quickly.
+                const gradesMap = {}; // key: studentId_topicId_testIndex -> score
+
+                // Get all topic IDs involved
+                const topicIds = [...new Set(assessments.map(a => a.topicId))];
+
+                // Fetch results by topic (batches of 10 if needed, but let's do simple loop)
+                for (const tid of topicIds) {
+                    const rQ = query(collection(db, "test_results"), where("topicId", "==", tid));
+                    const rSnap = await getDocs(rQ);
+                    rSnap.forEach(d => {
+                        const res = d.data();
+                        const key = `${res.studentId}_${res.topicId}_${res.testIndex || 0}`;
+                        gradesMap[key] = { score: res.score, total: res.total };
+                    });
+                }
+
+                // 5. Render Table
+                renderTable(students, assessments, gradesMap);
+
+            } catch (error) {
+                console.error("Error loading gradebook:", error);
+                document.getElementById('gradesTableBody').innerHTML = `<tr><td colspan="100" class="p-8 text-center text-red-500">Қате: ${error.message}</td></tr>`;
+            }
+        }
+
+        function renderTable(students, assessments, gradesMap) {
+            const headerRow = document.getElementById('tableHeaderRow');
+            const tbody = document.getElementById('gradesTableBody');
+
+            // Clear existing headers (except first)
+            while (headerRow.children.length > 1) {
+                headerRow.removeChild(headerRow.lastChild);
+            }
+
+            // Add Headers
+            if (assessments.length === 0) {
+                const th = document.createElement('th');
+                th.className = "p-4 text-sm font-bold text-text-secondary-light dark:text-text-secondary-dark border-r border-border-light dark:border-border-dark min-w-[120px]";
+                th.textContent = "Бағалар жоқ";
+                headerRow.appendChild(th);
+            } else {
+                assessments.forEach(ass => {
+                    const th = document.createElement('th');
+                    th.className = "p-4 text-sm font-bold text-text-secondary-light dark:text-text-secondary-dark border-r border-border-light dark:border-border-dark min-w-[120px] whitespace-normal";
+                    th.innerHTML = `
+                        <div class="flex flex-col gap-1">
+                            <span class="text-xs opacity-70">${ass.date ? new Date(ass.date).toLocaleDateString('kk-KZ') : ''}</span>
+                            <span>${ass.topicTitle}</span>
+                        </div>
+                    `;
+                    headerRow.appendChild(th);
+                });
+            }
+
+            // Add Rows
+            tbody.innerHTML = '';
+            if (students.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="100" class="p-8 text-center text-slate-500">Оқушылар жоқ</td></tr>`;
+                return;
+            }
+
+            students.forEach((student, i) => {
+                const tr = document.createElement('tr');
+                tr.className = "border-b border-border-light dark:border-border-dark hover:bg-slate-50 dark:hover:bg-slate-800/50";
+
+                // Student Name Col
+                const nameTd = document.createElement('td');
+                nameTd.className = "p-4 font-medium text-text-main-light dark:text-text-main-dark border-r border-border-light dark:border-border-dark sticky left-0 bg-white dark:bg-slate-900 z-10 whitespace-nowrap";
+                nameTd.innerHTML = `<span class="text-slate-400 w-6 inline-block">${i + 1}.</span> ${student.name}`;
+                tr.appendChild(nameTd);
+
+                if (assessments.length === 0) {
+                    const td = document.createElement('td');
+                    td.className = "p-4 text-center text-slate-400";
+                    td.textContent = "-";
+                    tr.appendChild(td);
+                } else {
+                    assessments.forEach(ass => {
+                        const td = document.createElement('td');
+                        td.className = "p-2 border-r border-border-light dark:border-border-dark text-center grade-cell relative group";
+
+                        const key = `${student.uid}_${ass.topicId}_${ass.testIndex}`; // NOTE: we stored 'uid' in student doc used for joining
+                        // Use student.uid which is the Auth UID used in test_results.studentId
+                        // The student doc has 'uid' field.
+                        const result = gradesMap[key];
+
+                        if (result) {
+                            const percent = Math.round((result.score / result.total) * 100);
+                            let colorClass = "text-slate-700 dark:text-slate-200";
+                            if (percent >= 90) colorClass = "text-green-600 font-bold";
+                            else if (percent >= 70) colorClass = "text-blue-600 font-medium";
+                            else if (percent < 50) colorClass = "text-red-500";
+
+                            td.innerHTML = `
+                                <div class="flex flex-col items-center">
+                                    <span class="text-lg ${colorClass}">${percent}%</span>
+                                    <span class="text-[10px] text-slate-400 opacity-0 group-hover:opacity-100 transition-opacity absolute bottom-1">${result.score}/${result.total}</span>
+                                </div>
+                            `;
+                        } else {
+                            td.innerHTML = `<span class="text-slate-300">-</span>`;
+                        }
+                        tr.appendChild(td);
+                    });
+                }
+
+                tbody.appendChild(tr);
+            });
+        }
+    </script>
+</body>
+
+</html>

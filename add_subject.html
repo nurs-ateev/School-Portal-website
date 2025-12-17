@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html class="light" lang="kk">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Пән қосу - Add Subject</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;family=Noto+Sans:wght@100..900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "primary-hover": "#0f6bd0",
+                        "background-light": "#f8fafc",
+                        "background-dark": "#101922",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1e293b",
+                        "text-main-light": "#0f172a",
+                        "text-main-dark": "#f1f5f9",
+                        "text-secondary-light": "#64748b",
+                        "text-secondary-dark": "#94a3b8",
+                        "border-light": "#e2e8f0",
+                        "border-dark": "#334155",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-text-main-light dark:text-text-main-dark min-h-screen flex flex-col overflow-hidden">
+    <!-- Top Navigation Bar -->
+    <header
+        class="h-16 bg-surface-light dark:bg-surface-dark border-b border-border-light dark:border-border-dark flex items-center justify-between px-6 lg:px-10 shrink-0 z-20 sticky top-0">
+        <div class="flex items-center gap-4">
+            <div class="size-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined">school</span>
+            </div>
+            <h1
+                class="text-lg lg:text-xl font-bold tracking-tight text-text-main-light dark:text-text-main-dark hidden sm:block">
+                Qazaq Tili &amp; Ädebieti</h1>
+        </div>
+        <div class="flex items-center gap-6">
+            <!-- Language Switcher -->
+            <div class="flex bg-slate-100 dark:bg-slate-800 rounded-lg p-1">
+                <a href="#"
+                    class="px-4 py-1.5 rounded-md bg-white dark:bg-slate-700 shadow-sm text-xs font-bold text-primary transition-all">Qaz</a>
+                <a href="add_subject_ru.html"
+                    class="px-4 py-1.5 rounded-md text-text-secondary-light dark:text-text-secondary-dark hover:text-text-main-light dark:hover:text-text-main-dark text-xs font-bold transition-all">Rus</a>
+            </div>
+            <!-- Notifications -->
+            <button
+                class="relative text-text-secondary-light dark:text-text-secondary-dark hover:text-primary transition-colors">
+                <span class="material-symbols-outlined">notifications</span>
+            </button>
+            <!-- User Profile -->
+            <div class="flex items-center gap-3 pl-4 border-l border-border-light dark:border-border-dark">
+                <div class="flex flex-col items-end hidden md:flex">
+                    <span id="userProfileName" class="text-sm font-semibold">Асқар мұғалім</span>
+                    <span id="userProfileRole"
+                        class="text-xs text-text-secondary-light dark:text-text-secondary-dark">Қазақ тілі пәні</span>
+                </div>
+                <div class="size-9 rounded-full bg-cover bg-center border border-border-light dark:border-border-dark cursor-pointer"
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCa4ZE-q9EYevR2yvvXpaC4hkr3uIQZvHTdqIgXu9EUgmjR3nz2jwIkRRZc5esHLpnJFD6_7k3LXozlBTA0oaIDMfloSD3MGuXTfh9Ojtyq64QjAEdzLoR_IJq27Q4EHug4ctGTkSfi02DY01agqV7wmyY0M5KAro9EfUE40yyniCsK0bK4ksc3Ltb78IjImezlA8eV9jhTaytMHrjW4a19ro9KBRomGbKaXaUgG4dEjEdXYVZQ-Kl7_VAiMSgykWNLwi5I9Bow5nEP');">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex flex-1">
+        <!-- Sidebar Navigation -->
+        <aside
+            class="w-64 bg-surface-light dark:bg-surface-dark border-r border-border-light dark:border-border-dark hidden lg:flex flex-col justify-between py-6 px-4 sticky top-16 h-[calc(100vh-4rem)]">
+            <div class="flex flex-col gap-2">
+                <nav class="flex flex-col gap-2">
+                    <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-secondary-light dark:text-text-secondary-dark hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary transition-colors group"
+                        href="teacher_dashboard.html">
+                        <span class="material-symbols-outlined text-[22px] group-hover:text-primary">dashboard</span>
+                        <span class="text-sm font-medium">Басты бет</span>
+                    </a>
+                    <a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary transition-colors"
+                        href="add_subject.html">
+                        <span class="material-symbols-outlined filled text-[22px]">book_2</span>
+                        <span class="text-sm font-bold">Пән қосу</span>
+                    </a>
+                    <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-secondary-light dark:text-text-secondary-dark hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary transition-colors group"
+                        href="classes.html">
+                        <span class="material-symbols-outlined text-[22px] group-hover:text-primary">groups</span>
+                        <span class="text-sm font-medium">Оқушылар</span>
+                    </a>
+                    <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-secondary-light dark:text-text-secondary-dark hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary transition-colors group"
+                        href="assignments.html">
+                        <span
+                            class="material-symbols-outlined text-[22px] group-hover:text-primary">assignment_add</span>
+                        <span class="text-sm font-medium">Тапсырмалар</span>
+                    </a>
+                    <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-secondary-light dark:text-text-secondary-dark hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary transition-colors group"
+                        href="grades.html">
+                        <span class="material-symbols-outlined text-[22px] group-hover:text-primary">star</span>
+                        <span class="text-sm font-medium">Бағалар</span>
+                    </a>
+                </nav>
+            </div>
+            <!-- Logout Button -->
+            <button
+                class="logout-btn flex w-full cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-10 px-4 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-text-main-light dark:text-white text-sm font-bold leading-normal tracking-[0.015em] transition-colors">
+                <span class="material-symbols-outlined" style="font-size: 20px;">logout</span>
+                <span class="truncate">Шығу</span>
+            </button>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 bg-background-light dark:bg-background-dark p-4 lg:p-8 scroll-smooth">
+            <div class="max-w-2xl mx-auto space-y-8">
+                <!-- Page Heading -->
+                <div class="flex items-center gap-4">
+                    <a href="teacher_dashboard.html"
+                        class="p-2 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                        <span class="material-symbols-outlined">arrow_back</span>
+                    </a>
+                    <div>
+                        <h2 class="text-3xl font-bold tracking-tight text-text-main-light dark:text-text-main-dark">
+                            Жаңа пән қосу</h2>
+                        <p class="text-text-secondary-light dark:text-text-secondary-dark mt-1">Оқытатын пәніңізді
+                            енгізіңіз</p>
+                    </div>
+                </div>
+
+                <!-- Create Subject Form -->
+                <div
+                    class="bg-surface-light dark:bg-surface-dark p-6 md:p-8 rounded-xl border border-border-light dark:border-border-dark shadow-sm">
+                    <form id="createSubjectForm" class="flex flex-col gap-6">
+                        <!-- Subject Name -->
+                        <div class="flex flex-col gap-2">
+                            <label for="subjectName"
+                                class="text-sm font-bold text-text-main-light dark:text-text-main-dark">
+                                Пән атауы
+                            </label>
+                            <input type="text" id="subjectName" required
+                                placeholder="Мысалы: Қазақ тілі, Қазақ әдебиеті"
+                                class="w-full h-12 rounded-lg border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark text-text-main-light dark:text-text-main-dark px-4 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
+                        </div>
+
+                        <!-- Description -->
+                        <div class="flex flex-col gap-2">
+                            <label for="subjectDescription"
+                                class="text-sm font-bold text-text-main-light dark:text-text-main-dark">
+                                Сипаттамасы (міндетті емес)
+                            </label>
+                            <textarea id="subjectDescription" rows="4" placeholder="Пән туралы қысқаша мәлімет..."
+                                class="w-full rounded-lg border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark text-text-main-light dark:text-text-main-dark p-4 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"></textarea>
+                        </div>
+
+                        <!-- Class Selection (Multi-select) -->
+                        <div class="flex flex-col gap-2">
+                            <label for="subjectClasses"
+                                class="text-sm font-bold text-text-main-light dark:text-text-main-dark">
+                                Сыныптар (Кімдерге арналған?)
+                            </label>
+                            <select id="subjectClasses" multiple
+                                class="w-full rounded-lg border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark text-text-main-light dark:text-text-main-dark p-2 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all min-h-[100px]">
+                                <!-- Options loaded via JS -->
+                            </select>
+                            <p class="text-xs text-text-secondary-light dark:text-text-secondary-dark">
+                                Ctrl (Windows) немесе Command (Mac) батырмасын басып тұрып, бірнеше сыныпты таңдауға
+                                болады.
+                            </p>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="flex justify-end gap-4 pt-4">
+                            <a href="teacher_dashboard.html"
+                                class="px-6 py-2.5 rounded-lg border border-border-light dark:border-border-dark text-text-secondary-light dark:text-text-secondary-dark font-bold hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                                Болдырмау
+                            </a>
+                            <button type="submit"
+                                class="px-6 py-2.5 rounded-lg bg-primary hover:bg-primary-hover text-white font-bold shadow-lg shadow-blue-500/20 transition-all active:scale-95 flex items-center gap-2">
+                                <span class="material-symbols-outlined">save</span>
+                                <span>Сақтау</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

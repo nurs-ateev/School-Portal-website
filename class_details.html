@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html class="light" lang="kk">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Сынып толығырақ - Class Details</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;family=Noto+Sans:wght@100..900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "primary-hover": "#0f6bd0",
+                        "background-light": "#f8fafc",
+                        "background-dark": "#101922",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1e293b",
+                        "text-main-light": "#0f172a",
+                        "text-main-dark": "#f1f5f9",
+                        "text-secondary-light": "#64748b",
+                        "text-secondary-dark": "#94a3b8",
+                        "border-light": "#e2e8f0",
+                        "border-dark": "#334155",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: { "DEFAULT": "0.375rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-text-main-light dark:text-text-main-dark min-h-screen flex flex-col">
+    <!-- Top Navigation Bar -->
+    <header
+        class="h-16 bg-surface-light dark:bg-surface-dark border-b border-border-light dark:border-border-dark flex items-center justify-between px-6 lg:px-10 shrink-0 z-20 sticky top-0">
+        <div class="flex items-center gap-4">
+            <div class="size-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined">school</span>
+            </div>
+            <h1
+                class="text-lg lg:text-xl font-bold tracking-tight text-text-main-light dark:text-text-main-dark hidden sm:block">
+                Qazaq Tili &amp; Ädebieti
+            </h1>
+        </div>
+        <div class="flex items-center gap-6">
+            <div class="flex bg-slate-100 dark:bg-slate-800 rounded-lg p-1">
+                <a href="#"
+                    class="px-4 py-1.5 rounded-md bg-white dark:bg-slate-700 shadow-sm text-xs font-bold text-primary transition-all">Qaz</a>
+                <a href="class_details_ru.html" id="ruLink"
+                    class="px-4 py-1.5 rounded-md text-text-secondary-light dark:text-text-secondary-dark hover:text-text-main-light dark:hover:text-text-main-dark text-xs font-bold transition-all">Rus</a>
+            </div>
+            <div class="size-9 rounded-full bg-slate-200 dark:bg-slate-700"></div>
+        </div>
+    </header>
+
+    <div class="flex flex-1">
+        <!-- Sidebar Navigation -->
+        <aside
+            class="w-64 bg-surface-light dark:bg-surface-dark border-r border-border-light dark:border-border-dark hidden lg:flex flex-col justify-between py-6 px-4 sticky top-16 h-[calc(100vh-4rem)]">
+            <nav class="flex flex-col gap-2">
+                <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-secondary-light dark:text-text-secondary-dark hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary transition-colors group"
+                    href="teacher_dashboard.html">
+                    <span class="material-symbols-outlined text-[22px] group-hover:text-primary">dashboard</span>
+                    <span class="text-sm font-medium">Басты бет</span>
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-secondary-light dark:text-text-secondary-dark hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary transition-colors group"
+                    href="add_subject.html">
+                    <span class="material-symbols-outlined text-[22px] group-hover:text-primary">book_2</span>
+                    <span class="text-sm font-medium">Пән қосу</span>
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary transition-colors"
+                    href="classes.html">
+                    <span class="material-symbols-outlined filled text-[22px]">groups</span>
+                    <span class="text-sm font-bold">Оқушылар</span>
+                </a>
+            </nav>
+            <div class="px-4">
+                <button
+                    class="logout-btn flex w-full cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-10 px-4 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-text-main-light dark:text-white text-sm font-bold transition-colors">
+                    <span class="material-symbols-outlined" style="font-size: 20px;">logout</span>
+                    <span class="truncate">Шығу</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 bg-background-light dark:bg-background-dark p-4 lg:p-8 scroll-smooth">
+            <div class="max-w-6xl mx-auto space-y-8">
+                <div>
+                    <div
+                        class="flex items-center gap-2 text-sm text-text-secondary-light dark:text-text-secondary-dark mb-4">
+                        <a href="classes.html" class="hover:text-primary hover:underline">Сыныптар</a>
+                        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                        <span class="font-medium text-text-main-light dark:text-text-main-dark"
+                            id="breadcrumbClass">Сынып</span>
+                    </div>
+                    <!-- Header -->
+                    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+                        <div>
+                            <h2 class="text-3xl font-bold tracking-tight text-text-main-light dark:text-text-main-dark"
+                                id="headerClassName">
+                                <span
+                                    class="animate-pulse bg-slate-200 dark:bg-slate-700 rounded h-8 w-48 inline-block"></span>
+                            </h2>
+                            <p class="text-text-secondary-light dark:text-text-secondary-dark mt-1"
+                                id="headerClassInfo">Сынып оқушыларының тізімі</p>
+                        </div>
+                        <button id="addStudentBtn"
+                            class="flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white px-5 py-2.5 rounded-lg font-bold shadow-lg shadow-blue-500/20 transition-all active:scale-95">
+                            <span class="material-symbols-outlined text-[20px]">person_add</span>
+                            <span>Оқушы қосу</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Students Table - Simplified as List for now -->
+                <div
+                    class="bg-surface-light dark:bg-surface-dark rounded-2xl border border-border-light dark:border-border-dark overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr
+                                    class="border-b border-border-light dark:border-border-dark bg-slate-50 dark:bg-slate-800/50">
+                                    <th
+                                        class="p-4 text-sm font-bold text-text-secondary-light dark:text-text-secondary-dark">
+                                        №</th>
+                                    <th
+                                        class="p-4 text-sm font-bold text-text-secondary-light dark:text-text-secondary-dark">
+                                        Аты-жөні</th>
+                                    <th
+                                        class="p-4 text-sm font-bold text-text-secondary-light dark:text-text-secondary-dark">
+                                        Логин (Email)</th>
+                                    <th
+                                        class="p-4 text-sm font-bold text-text-secondary-light dark:text-text-secondary-dark text-right">
+                                        Әрекеттер</th>
+                                </tr>
+                            </thead>
+                            <tbody id="studentsTableBody">
+                                <!-- Rows will be loaded here -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="emptyState" class="hidden flex flex-col items-center justify-center p-12">
+                        <span class="material-symbols-outlined text-4xl text-slate-400 mb-2">person_off</span>
+                        <p class="text-slate-500 font-medium">Бұл сыныпта әзірге оқушылар жоқ</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add Student Modal -->
+    <div id="addStudentModal" class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+        <div class="bg-surface-light dark:bg-surface-dark p-6 rounded-2xl w-full max-w-sm shadow-2xl scale-95 opacity-0 transition-all duration-300"
+            id="modalContent">
+            <h3 class="text-xl font-bold mb-4 text-text-main-light dark:text-text-main-dark">Оқушы қосу</h3>
+            <form id="studentForm" class="space-y-4">
+                <div>
+                    <label
+                        class="block text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark mb-1">Оқушының
+                        аты</label>
+                    <input type="text" id="studentName" placeholder="Алихан Нұрғали"
+                        class="w-full rounded-lg bg-slate-50 dark:bg-slate-800 border-border-light dark:border-border-dark focus:ring-2 focus:ring-primary/50 outline-none p-2.5"
+                        required>
+                </div>
+                <!-- Email Auto-Generated -->
+                <div class="hidden">
+                    <label
+                        class="block text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark mb-1">Email
+                        (Логин ретінде)</label>
+                    <input type="email" id="studentEmail" placeholder="ali@school.kz"
+                        class="w-full rounded-lg bg-slate-50 dark:bg-slate-800 border-border-light dark:border-border-dark focus:ring-2 focus:ring-primary/50 outline-none p-2.5">
+                </div>
+                <p class="text-xs text-slate-500">Логин мен құпия сөз автоматты түрде жасалады (Құпия сөз: 12345678)</p>
+                <!-- Note: Password generation or setting is skipped for MVP simplicity, assume generic or admin set later -->
+                <div class="flex gap-3 mt-6">
+                    <button type="button" id="cancelStudentBtn"
+                        class="flex-1 py-2.5 rounded-lg font-bold text-text-secondary-light dark:text-text-secondary-dark hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Болдырмау</button>
+                    <button type="submit"
+                        class="flex-1 py-2.5 rounded-lg font-bold bg-primary text-white hover:bg-primary-hover transition-colors shadow-lg shadow-blue-500/20">Қосу</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module">
+        import { auth, db } from "./js/firebase-config.js";
+        import { doc, getDoc, collection, query, where, getDocs, addDoc, updateDoc, increment, setDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+        import { onAuthStateChanged, signOut, createUserWithEmailAndPassword, getAuth } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        import { initializeApp, deleteApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+
+        // Config for Secondary App
+        const firebaseConfig = {
+            apiKey: "AIzaSyD2QrBbdqqs-5AWYKSn4R83ACSGup2Grkw",
+            authDomain: "kazakh-school-2eb28.firebaseapp.com",
+            projectId: "kazakh-school-2eb28",
+            storageBucket: "kazakh-school-2eb28.firebasestorage.app",
+            messagingSenderId: "939712959176",
+            appId: "1:939712959176:web:1b49be183d31ff66f50bfd",
+            measurementId: "G-WQS0X6NT8Y"
+        };
+
+        function transliterate(word) {
+            const converter = {
+                'а': 'a', 'ә': 'a', 'б': 'b', 'в': 'v', 'г': 'g', 'ғ': 'gh', 'д': 'd',
+                'е': 'e', 'ё': 'e', 'ж': 'zh', 'з': 'z', 'и': 'i', 'й': 'y', 'к': 'k',
+                'қ': 'q', 'л': 'l', 'м': 'm', 'н': 'n', 'ң': 'ng', 'о': 'o', 'ө': 'o',
+                'п': 'p', 'р': 'r', 'с': 's', 'т': 't', 'у': 'u', 'ұ': 'u', 'ү': 'u',
+                'ф': 'f', 'х': 'h', 'һ': 'h', 'ц': 'ts', 'ч': 'ch', 'ш': 'sh', 'щ': 'sch',
+                'ъ': '', 'ы': 'y', 'і': 'i', 'ь': '', 'э': 'e', 'ю': 'yu', 'я': 'ya'
+            };
+            return word.split('').map(char => converter[char] || char).join('');
+        }
+
+        // DOM Elements
+        const modal = document.getElementById('addStudentModal');
+        const modalContent = document.getElementById('modalContent');
+        const addBtn = document.getElementById('addStudentBtn');
+        const cancelBtn = document.getElementById('cancelStudentBtn');
+        const studentForm = document.getElementById('studentForm');
+
+        // Modal Logic
+        function openModal() {
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modalContent.classList.remove('scale-95', 'opacity-0');
+                modalContent.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        function closeModal() {
+            modalContent.classList.remove('scale-100', 'opacity-100');
+            modalContent.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+            studentForm.reset();
+        }
+
+        addBtn.addEventListener('click', openModal);
+        cancelBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        // Auth & Data Logic
+        onAuthStateChanged(auth, async (user) => {
+            if (!user) {
+                window.location.href = 'login.html';
+            } else {
+                const urlParams = new URLSearchParams(window.location.search);
+                const classId = urlParams.get('id');
+
+                if (classId) {
+                    const ruLink = document.getElementById('ruLink');
+                    if (ruLink) ruLink.href = `class_details_ru.html?id=${classId}`;
+
+                    await loadClassInfo(classId);
+                    await loadStudents(classId);
+
+                    // Handle Add Student
+                    studentForm.addEventListener('submit', async (e) => {
+                        e.preventDefault();
+                        const fullName = document.getElementById('studentName').value.trim();
+                        // const emailInput = document.getElementById('studentEmail').value; // Removed manual email input
+
+                        if (!fullName) return;
+
+                        // Generate Logic
+                        // 1. Split name
+                        const parts = fullName.split(' ');
+                        let firstName = parts[0] || '';
+                        let lastName = parts[1] || '';
+                        if (parts.length > 2) lastName = parts.slice(1).join(' ');
+
+                        // 2. Generate Email: name.surname.RAND@mektep.kz
+                        const latinName = transliterate(firstName.toLowerCase());
+                        const latinSurname = transliterate(lastName.toLowerCase());
+                        const randomId = Math.floor(1000 + Math.random() * 9000); // 4 digits
+                        const generatedEmail = `${latinName}.${latinSurname}.${randomId}@mektep.kz`;
+                        const defaultPassword = "12345678";
+
+                        try {
+                            // 3. Create Auth User using Secondary App (to avoid logging out teacher)
+                            const secondaryApp = initializeApp(firebaseConfig, "Secondary");
+                            const secondaryAuth = getAuth(secondaryApp);
+                            const userCred = await createUserWithEmailAndPassword(secondaryAuth, generatedEmail, defaultPassword);
+                            const newStudentUid = userCred.user.uid;
+
+                            // 4. Create Student Document in Firestore (students collection for class list)
+                            await addDoc(collection(db, "students"), {
+                                classId: classId,
+                                teacherId: user.uid,
+                                uid: newStudentUid, // Link to Auth UID
+                                name: fullName,
+                                email: generatedEmail,
+                                password: defaultPassword, // Storing plain text for teacher to see (User request)
+                                createdAt: new Date().toISOString()
+                            });
+
+                            // 5. Create User Document in 'users' collection (for role management)
+                            await setDoc(doc(db, "users", newStudentUid), {
+                                email: generatedEmail,
+                                name: fullName,
+                                role: 'student',
+                                classId: classId,
+                                createdAt: new Date().toISOString()
+                            });
+
+                            // 6. Update class student count
+                            const classRef = doc(db, "classes", classId);
+                            await updateDoc(classRef, {
+                                studentCount: increment(1)
+                            });
+
+                            // Cleanup secondary app
+                            deleteApp(secondaryApp);
+
+                            closeModal();
+                            loadStudents(classId);
+                            loadClassInfo(classId);
+                            alert(`Оқушы қосылды!\nЛогин: ${generatedEmail}\nҚұпия сөз: ${defaultPassword}`);
+
+                        } catch (error) {
+                            console.error("Error adding student:", error);
+                            alert("Қате: " + error.message);
+                        }
+                    });
+
+                } else {
+                    window.location.href = 'classes.html';
+                }
+            }
+        });
+
+        const logoutBtn = document.querySelector('.logout-btn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', async () => {
+                await signOut(auth);
+                window.location.href = 'index.html';
+            });
+        }
+
+        async function loadClassInfo(classId) {
+            try {
+                const docRef = doc(db, "classes", classId);
+                const docSnap = await getDoc(docRef);
+                if (docSnap.exists()) {
+                    const data = docSnap.data();
+                    const title = `${data.grade}"${data.name}" сыныбы`;
+                    document.getElementById('headerClassName').textContent = title;
+                    document.getElementById('breadcrumbClass').textContent = title;
+                    document.getElementById('headerClassInfo').textContent = `${data.studentCount || 0} оқушы`;
+                }
+            } catch (error) {
+                console.error("Error loading class info:", error);
+            }
+        }
+
+        async function loadStudents(classId) {
+            const tbody = document.getElementById('studentsTableBody');
+            const emptyState = document.getElementById('emptyState');
+
+            try {
+                const q = query(
+                    collection(db, "students"),
+                    where("classId", "==", classId)
+                );
+                const snapshot = await getDocs(q);
+
+                tbody.innerHTML = '';
+                if (snapshot.empty) {
+                    emptyState.classList.remove('hidden');
+                } else {
+                    emptyState.classList.add('hidden');
+                    let i = 1;
+                    snapshot.forEach(doc => {
+                        const data = doc.data();
+                        const row = `
+                           <tr class="border-b border-border-light dark:border-border-dark hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                               <td class="p-4 text-text-secondary-light dark:text-text-secondary-dark">${i++}</td>
+                               <td class="p-4 font-medium text-text-main-light dark:text-text-main-dark">${data.name}</td>
+                               <td class="p-4 text-text-secondary-light dark:text-text-secondary-dark">${data.email}</td>
+                               <td class="p-4 text-right">
+                                   <button class="text-primary hover:bg-primary/10 p-2 rounded-lg transition-colors">
+                                       <span class="material-symbols-outlined text-[20px]">edit</span>
+                                   </button>
+                                   <button class="text-red-500 hover:bg-red-500/10 p-2 rounded-lg transition-colors ml-1">
+                                       <span class="material-symbols-outlined text-[20px]">delete</span>
+                                   </button>
+                               </td>
+                           </tr>
+                       `;
+                        tbody.insertAdjacentHTML('beforeend', row);
+                    });
+                }
+            } catch (error) {
+                console.error("Error loading students:", error);
+            }
+        }
+    </script>
+</body>
+
+</html>

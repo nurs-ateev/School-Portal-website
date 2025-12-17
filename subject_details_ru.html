@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html class="light" lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>О предмете - Subject Details</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;family=Noto+Sans:wght@100..900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "primary-hover": "#0f6bd0",
+                        "background-light": "#f8fafc",
+                        "background-dark": "#101922",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1e293b",
+                        "text-main-light": "#0f172a",
+                        "text-main-dark": "#f1f5f9",
+                        "text-secondary-light": "#64748b",
+                        "text-secondary-dark": "#94a3b8",
+                        "border-light": "#e2e8f0",
+                        "border-dark": "#334155",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: { "DEFAULT": "0.375rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-text-main-light dark:text-text-main-dark min-h-screen flex flex-col">
+    <!-- Top Navigation Bar -->
+    <header
+        class="h-16 bg-surface-light dark:bg-surface-dark border-b border-border-light dark:border-border-dark flex items-center justify-between px-6 lg:px-10 shrink-0 z-20 sticky top-0">
+        <div class="flex items-center gap-4">
+            <div class="size-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined">school</span>
+            </div>
+            <h1
+                class="text-lg lg:text-xl font-bold tracking-tight text-text-main-light dark:text-text-main-dark hidden sm:block">
+                Qazaq Tili &amp; Ädebieti
+            </h1>
+        </div>
+        <div class="flex items-center gap-6">
+            <!-- Language Switcher -->
+            <div class="flex bg-slate-100 dark:bg-slate-800 rounded-lg p-1">
+                <a href="subject_details.html" id="kzLink"
+                    class="px-4 py-1.5 rounded-md text-text-secondary-light dark:text-text-secondary-dark hover:text-text-main-light dark:hover:text-text-main-dark text-xs font-bold transition-all">Qaz</a>
+                <a href="#"
+                    class="px-4 py-1.5 rounded-md bg-white dark:bg-slate-700 shadow-sm text-xs font-bold text-primary transition-all">Rus</a>
+            </div>
+            <!-- User Profile (Placeholder) -->
+            <div class="size-9 rounded-full bg-slate-200 dark:bg-slate-700"></div>
+        </div>
+    </header>
+
+    <div class="flex flex-1">
+        <!-- Sidebar Navigation -->
+        <aside
+            class="w-64 bg-surface-light dark:bg-surface-dark border-r border-border-light dark:border-border-dark hidden lg:flex flex-col justify-between py-6 px-4 sticky top-16 h-[calc(100vh-4rem)]">
+            <nav class="flex flex-col gap-2">
+                <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-secondary-light dark:text-text-secondary-dark hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary transition-colors group"
+                    href="teacher_dashboard_ru.html">
+                    <span class="material-symbols-outlined text-[22px] group-hover:text-primary">dashboard</span>
+                    <span class="text-sm font-medium">Главная</span>
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary transition-colors"
+                    href="add_subject_ru.html">
+                    <span class="material-symbols-outlined text-[22px] filled">book_2</span>
+                    <span class="text-sm font-bold">Добавить предмет</span>
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-secondary-light dark:text-text-secondary-dark hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary transition-colors group"
+                    href="classes_ru.html">
+                    <span class="material-symbols-outlined text-[22px] group-hover:text-primary">groups</span>
+                    <span class="text-sm font-medium">Ученики</span>
+                </a>
+            </nav>
+            <div class="px-4">
+                <button
+                    class="logout-btn flex w-full cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-10 px-4 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-text-main-light dark:text-white text-sm font-bold transition-colors">
+                    <span class="material-symbols-outlined" style="font-size: 20px;">logout</span>
+                    <span class="truncate">Выйти</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 overflow-y-auto bg-background-light dark:bg-background-dark p-4 lg:p-8 scroll-smooth">
+            <div class="max-w-4xl mx-auto space-y-8">
+                <!-- Breadcrumbs & Header -->
+                <div>
+                    <div
+                        class="flex items-center gap-2 text-sm text-text-secondary-light dark:text-text-secondary-dark mb-4">
+                        <a href="teacher_dashboard_ru.html" class="hover:text-primary hover:underline">Главная</a>
+                        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                        <span class="font-medium text-text-main-light dark:text-text-main-dark"
+                            id="breadcrumbSubjectName">Предмет</span>
+                    </div>
+
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                        <div>
+                            <h2 class="text-3xl font-bold tracking-tight text-text-main-light dark:text-text-main-dark"
+                                id="pageSubjectName">
+                                <span
+                                    class="animate-pulse bg-slate-200 dark:bg-slate-700 rounded h-8 w-48 inline-block"></span>
+                            </h2>
+                            <p class="text-text-secondary-light dark:text-text-secondary-dark mt-1"
+                                id="pageSubjectDescription">
+                                <span
+                                    class="animate-pulse bg-slate-200 dark:bg-slate-700 rounded h-4 w-64 inline-block"></span>
+                            </p>
+                        </div>
+
+                        <button onclick="deleteCurrentSubject()"
+                            class="flex items-center gap-2 px-4 py-2 text-sm font-bold text-red-500 bg-red-50 dark:bg-red-900/10 hover:bg-red-100 dark:hover:bg-red-900/20 rounded-lg transition-colors border border-red-200 dark:border-red-900/30">
+                            <span class="material-symbols-outlined text-[18px]">delete</span>
+                            Удалить предмет
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Grade Selection Grid -->
+                <div>
+                    <!-- Class Selection Grid -->
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <h3
+                                class="text-xl font-bold text-text-main-light dark:text-text-main-dark flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary">school</span>
+                                Классы
+                            </h3>
+                            <button onclick="openAddClassModal()"
+                                class="flex items-center gap-2 px-4 py-2 bg-primary text-white text-sm font-bold rounded-lg hover:bg-primary-hover transition-colors shadow-lg shadow-blue-500/20">
+                                <span class="material-symbols-outlined text-[20px]">add</span>
+                                Добавить класс
+                            </button>
+                        </div>
+
+                        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="gradesContainer">
+                            <!-- Classes will be loaded here -->
+                            <div
+                                class="col-span-full flex flex-col items-center justify-center p-10 border-2 border-dashed border-slate-300 dark:border-slate-700 rounded-xl">
+                                <span
+                                    class="material-symbols-outlined text-4xl text-slate-400 mb-2 animate-spin">refresh</span>
+                                <p class="text-slate-500 font-medium">Загрузка...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </main>
+    </div>
+
+    <!-- Add Class Modal -->
+    <div id="addClassModal" class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+        <div class="bg-surface-light dark:bg-surface-dark p-6 rounded-2xl w-full max-w-sm shadow-2xl scale-95 opacity-0 transition-all duration-300"
+            id="modalContent">
+            <h3 class="text-xl font-bold mb-4 text-text-main-light dark:text-text-main-dark">Добавить класс</h3>
+            <p class="text-text-secondary-light dark:text-text-secondary-dark text-sm mb-4">Выберите класс для этого
+                предмета.</p>
+
+            <form id="addClassForm" class="space-y-4">
+                <div>
+                    <label
+                        class="block text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark mb-1">Выберите
+                        класс</label>
+                    <select id="classSelect"
+                        class="w-full rounded-lg bg-slate-50 dark:bg-slate-800 border-border-light dark:border-border-dark focus:ring-2 focus:ring-primary/50 outline-none p-2.5"
+                        required>
+                        <option value="">Загрузка...</option>
+                    </select>
+                </div>
+                <div class="flex gap-3 mt-6">
+                    <button type="button" onclick="closeModal()"
+                        class="flex-1 py-2.5 rounded-lg font-bold text-text-secondary-light dark:text-text-secondary-dark hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Отмена</button>
+                    <button type="submit"
+                        class="flex-1 py-2.5 rounded-lg font-bold bg-primary text-white hover:bg-primary-hover transition-colors shadow-lg shadow-blue-500/20">Добавить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Logic to fetch subject details and render grades -->
+    <script type="module">
+        import { auth, db } from "./js/firebase-config.js";
+        import { doc, getDoc, updateDoc, arrayUnion, collection, query, where, getDocs, deleteDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+        import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+        // Delete Subject Function
+        window.deleteCurrentSubject = async () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const subjectId = urlParams.get('id');
+
+            if (!subjectId) return;
+
+            if (confirm('Вы уверены, что хотите удалить этот предмет? Это действие нельзя отменить.')) {
+                try {
+                    await deleteDoc(doc(db, "subjects", subjectId));
+                    alert('Предмет успешно удален!');
+                    window.location.href = 'teacher_dashboard_ru.html';
+                } catch (error) {
+                    console.error("Error deleting subject:", error);
+                    alert('Ошибка: ' + error.message);
+                }
+            }
+        };
+
+        // Global Modal Functions
+        window.openAddClassModal = async () => {
+            const modal = document.getElementById('addClassModal');
+            const content = document.getElementById('modalContent');
+            const select = document.getElementById('classSelect');
+
+            modal.classList.remove('hidden');
+            // Animation
+            requestAnimationFrame(() => {
+                content.classList.remove('scale-95', 'opacity-0');
+                content.classList.add('scale-100', 'opacity-100');
+            });
+
+            // Load available classes
+            select.innerHTML = '<option value="">Загрузка...</option>';
+
+            try {
+                const user = auth.currentUser;
+                if (!user) return;
+
+                // 1. Get current subject's class list to exclude them
+                const urlParams = new URLSearchParams(window.location.search);
+                const subjectId = urlParams.get('id');
+                const subjectDoc = await getDoc(doc(db, "subjects", subjectId));
+                const subjectData = subjectDoc.data();
+                const existingClassIds = subjectData.classIds || [];
+
+                // 2. Fetch all teacher's classes
+                const q = query(collection(db, "classes"), where("teacherId", "==", user.uid));
+                const querySnapshot = await getDocs(q);
+
+                select.innerHTML = '<option value="">Выберите класс</option>';
+
+                let hasAvailable = false;
+                querySnapshot.forEach((doc) => {
+                    if (!existingClassIds.includes(doc.id)) {
+                        const cls = doc.data();
+                        const option = document.createElement('option');
+                        option.value = doc.id;
+                        option.textContent = `${cls.grade} класс "${cls.name}"`;
+                        select.appendChild(option);
+                        hasAvailable = true;
+                    }
+                });
+
+                if (!hasAvailable) {
+                    select.innerHTML = '<option value="">Все классы уже добавлены</option>';
+                }
+
+            } catch (e) {
+                console.error("Error loading classes inputs:", e);
+                select.innerHTML = '<option value="">Ошибка загрузки</option>';
+            }
+        };
+
+        window.closeModal = () => {
+            const modal = document.getElementById('addClassModal');
+            const content = document.getElementById('modalContent');
+
+            content.classList.remove('scale-100', 'opacity-100');
+            content.classList.add('scale-95', 'opacity-0');
+
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        };
+
+        // Form Submit
+        document.getElementById('addClassForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const select = document.getElementById('classSelect');
+            const classId = select.value;
+
+            if (!classId) return;
+
+            const submitBtn = e.target.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = '...';
+
+            try {
+                const urlParams = new URLSearchParams(window.location.search);
+                const subjectId = urlParams.get('id');
+
+                await updateDoc(doc(db, "subjects", subjectId), {
+                    classIds: arrayUnion(classId)
+                });
+
+                alert('Класс успешно добавлен!');
+                closeModal();
+                renderSubjectClasses(subjectId); // Refresh
+
+            } catch (error) {
+                console.error("Error adding class:", error);
+                alert('Ошибка: ' + error.message);
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+            }
+        });
+
+        // Auth Check
+        onAuthStateChanged(auth, async (user) => {
+            if (!user) {
+                window.location.href = 'login_ru.html';
+            } else {
+                const urlParams = new URLSearchParams(window.location.search);
+                const subjectId = urlParams.get('id');
+
+                if (subjectId) {
+                    // Update Language Link with ID
+                    const kzLink = document.getElementById('kzLink');
+                    if (kzLink) kzLink.href = `subject_details.html?id=${subjectId}`;
+
+                    await loadSubjectDetails(subjectId);
+                    await renderSubjectClasses(subjectId);
+                } else {
+                    alert('ID предмета не найден');
+                    window.location.href = 'teacher_dashboard_ru.html';
+                }
+            }
+        });
+
+        async function renderSubjectClasses(subjectId) {
+            const container = document.getElementById('gradesContainer');
+            if (!container) return;
+
+            try {
+                const subjectDoc = await getDoc(doc(db, "subjects", subjectId));
+                if (!subjectDoc.exists()) return;
+
+                const data = subjectDoc.data();
+                const classIds = data.classIds || [];
+
+                if (classIds.length === 0) {
+                    container.innerHTML = `
+                        <div class="col-span-full flex flex-col items-center justify-center p-10 border-2 border-dashed border-slate-300 dark:border-slate-700 rounded-xl">
+                            <span class="material-symbols-outlined text-4xl text-slate-400 mb-2">school</span>
+                            <p class="text-slate-500 font-medium">К этому предмету еще не добавлены классы</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                container.innerHTML = '';
+
+                for (const clsId of classIds) {
+                    const classDoc = await getDoc(doc(db, "classes", clsId));
+                    if (classDoc.exists()) {
+                        const cls = classDoc.data();
+                        const cardHTML = `
+                            <a href="topics_ru.html?subjectId=${subjectId}&classId=${clsId}" class="group bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark p-6 rounded-xl hover:shadow-lg hover:border-primary/50 transition-all text-center flex flex-col items-center gap-3 active:scale-95">
+                                <div class="size-16 rounded-full bg-primary/10 group-hover:scale-110 transition-transform flex items-center justify-center text-primary font-bold text-2xl">
+                                    ${cls.grade}
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-bold text-lg text-text-main-light dark:text-text-main-dark group-hover:text-primary transition-colors">${cls.grade} "${cls.name}"</span>
+                                    <span class="text-xs text-text-secondary-light dark:text-text-secondary-dark">${cls.studentsCount || 0} учеников</span>
+                                </div>
+                            </a>
+                        `;
+                        container.innerHTML += cardHTML;
+                    }
+                }
+            } catch (error) {
+                console.error("Error loading classes:", error);
+                container.innerHTML = '<p class="col-span-full text-red-500 text-center">Ошибка загрузки</p>';
+            }
+        }
+
+        // Logout
+        const logoutBtn = document.querySelector('.logout-btn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', async () => {
+                await signOut(auth);
+                window.location.href = 'index_ru.html';
+            });
+        }
+
+        async function loadSubjectDetails(subjectId) {
+            try {
+                const docRef = doc(db, "subjects", subjectId);
+                const docSnap = await getDoc(docRef);
+
+                if (docSnap.exists()) {
+                    const data = docSnap.data();
+                    document.getElementById('breadcrumbSubjectName').textContent = data.name;
+                    document.getElementById('pageSubjectName').textContent = data.name;
+                    document.getElementById('pageSubjectDescription').textContent = data.description || 'Нет описания';
+                } else {
+                    console.log("No such subject!");
+                    document.getElementById('pageSubjectName').textContent = "Предмет не найден";
+                }
+            } catch (error) {
+                console.error("Error getting document:", error);
+            }
+        }
+    </script>
+</body>
+
+</html>

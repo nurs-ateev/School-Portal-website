@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Главная - QazEdu</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body
+    class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display overflow-x-hidden">
+    <div class="layout-container flex h-full grow flex-col">
+        <!-- Navigation Bar -->
+        <header
+            class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm">
+            <div class="px-4 md:px-10 py-3 flex items-center justify-between max-w-[1200px] mx-auto">
+                <!-- Logo -->
+                <div class="flex items-center gap-4 text-slate-900 dark:text-white">
+                    <div class="size-8 text-primary">
+                        <span class="material-symbols-outlined !text-[32px]">school</span>
+                    </div>
+                    <h2 class="text-xl font-bold leading-tight tracking-[-0.015em]">QazEdu</h2>
+                </div>
+                <!-- Desktop Nav & Actions -->
+                <div class="flex flex-1 items-center justify-end gap-4 md:gap-8">
+                    <!-- Nav Links -->
+                    <nav class="hidden md:flex items-center gap-6">
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Курсы</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="#">О нас</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Контакты</a>
+                    </nav>
+                    <!-- Language Switcher -->
+                    <div class="hidden sm:flex h-9 bg-slate-200 dark:bg-slate-800 p-1 rounded-lg">
+                        <a href="index.html"
+                            class="flex cursor-pointer px-3 items-center justify-center rounded-md hover:bg-white dark:hover:bg-slate-700 hover:shadow-sm transition-all text-slate-600 dark:text-slate-300">
+                            <span class="text-xs font-bold">QAZ</span>
+                        </a>
+                        <a href="#"
+                            class="flex cursor-pointer px-3 items-center justify-center rounded-md bg-white dark:bg-slate-700 shadow-sm transition-all text-primary">
+                            <span class="text-xs font-bold">RUS</span>
+                        </a>
+                    </div>
+                    <!-- Auth Buttons -->
+                    <div class="flex gap-2">
+                        <a href="login_ru.html"
+                            class="flex items-center justify-center rounded-lg h-9 px-4 bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-white text-sm font-bold hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors">
+                            <span class="truncate">Войти</span>
+                        </a>
+                        <a href="register_ru.html"
+                            class="flex items-center justify-center rounded-lg h-9 px-4 bg-primary text-white text-sm font-bold hover:bg-blue-600 transition-colors shadow-lg shadow-blue-500/30">
+                            <span class="truncate">Регистрация</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="flex-1 w-full max-w-[1200px] mx-auto px-4 md:px-10 py-5 flex flex-col gap-12">
+            <!-- Hero Section -->
+            <section class="@container">
+                <div class="flex flex-col-reverse gap-8 py-10 @[864px]:flex-row @[864px]:items-center">
+                    <div class="flex flex-col gap-6 flex-1 @[864px]:max-w-[500px]">
+                        <div class="flex flex-col gap-4">
+                            <span
+                                class="inline-flex w-fit items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary">
+                                <span class="material-symbols-outlined !text-sm">verified</span>
+                                Онлайн образование
+                            </span>
+                            <h1
+                                class="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight text-slate-900 dark:text-white">
+                                Изучайте казахский язык и литературу <span class="text-primary">онлайн</span>
+                            </h1>
+                            <p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-[480px]">
+                                Уникальная платформа для учителей и учеников. Определите свой уровень и начните
+                                обучение уже сегодня.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-3 pt-2">
+                            <a href="register_ru.html"
+                                class="flex items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-base font-bold tracking-wide hover:bg-blue-600 transition-all shadow-xl shadow-blue-500/20">
+                                Начать бесплатно
+                            </a>
+                            <button
+                                class="flex items-center justify-center rounded-lg h-12 px-6 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-base font-bold hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+                                Подробнее
+                            </button>
+                        </div>
+                        <!-- Trust indicators -->
+                        <div class="flex items-center gap-4 mt-4 text-slate-500 dark:text-slate-400 text-sm">
+                            <div class="flex -space-x-2">
+                                <div class="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-200"
+                                    data-alt="User avatar 1"
+                                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCULQ0QdXKVcAQK6KKq0LO4p-sFHmagcr-XfWabx5l_JQKiAfkshNVotaMgxAsU-6nlXL64HPch6qva-FFMcOQMPie2Jh7Top125pYWSzJtgFHfEQwftZCAosZoRB9JKmtwrENlFaSn9gh6y_tyEJDkqGXBlVwIEWdvF6RQ1kDCtORFTpiBMIjl7r_LW11Eq9IbvFplzLNWS9okjORnoMcT5wxC_bs5Z-_qlfZmYzm37FknpK38Ex6yAs7PBF7dyrEbi-YXooLYx4mP'); background-size: cover;">
+                                </div>
+                                <div class="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-200"
+                                    data-alt="User avatar 2"
+                                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCqSYB2zSpCfSzttzf-AMUhZiEJpwm8z5QUPv5T189hvp9BmI7EG7wL34q4V5BUsTM71M9CQmfnQd05v--h-GHMjoUNLq7NG-3WV3ihsXvM8jQ2A6eKVzwvD3eLR8_riDpH4LR246EkIMTbpWfYFs-_t8-BbJLwM_WN7pe36buayndN3imlfXsDPGaIKK-6Bi961b-9Qtu2z6qDZpHz3vdjh6gOf3LFWBF-ioH4x0grHwTA8hI2JnZfv0AnJbroAV5qDSspWP--oNin'); background-size: cover;">
+                                </div>
+                                <div class="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-200"
+                                    data-alt="User avatar 3"
+                                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBO6JuJhwmM2acptUhj5qrVSMRkXZU3rIku5DUSaY-I6eRWwn1LEeTHAALlex-wLikmHK071s8HsRI4xmERfMWidFXBkYdPEQ1832xK-Kw5bpGDf8YTi6s_j0vJPh3apyzqbl0WFYC1BMMFw-9_Dk6RN0UAg-_ZubgKNtzyC-lRjNXavbvZkCATqll41ln5r9kHe_hsrobyoJp2h7-VJUAKZu4lgf1TLKtOXVYMTIg6Zk1uHDgeYRKLIM-D6-i3ICjilGRNnjxut4fD'); background-size: cover;">
+                                </div>
+                            </div>
+                            <p>1000+ учеников с нами</p>
+                        </div>
+                    </div>
+                    <div
+                        class="flex-1 w-full aspect-video md:aspect-[4/3] rounded-2xl overflow-hidden bg-slate-200 relative group shadow-2xl">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                            data-alt="Students studying together in a modern library environment"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD2stNlM9G7Wj5NZEFRr5DITPDcwiZPcYFGgO8XmMYBG8FP4DQ9b85Dpk9d6rx1IoZCFtvBB0XE-0Jp0NG4DZnA9p9i9KMD6JYucjAherotc-Hq3JbSmMFD_i92l7gz1YEwiKOMy_Pa4fmACWI3YP5EfwHc7RZ0UhX-Me9LcMjwnUxGSD20r7oUxxIFUNvEawcfMEY1XM5wAV9t_3DCqgUBsybJiHI-NmNs_8mXBr5-16mILc3a4OCTZzXSz_QLgRdAdNQEK7cI3vg_");'>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
+                            <div class="text-white">
+                                <p class="font-bold text-lg">Интерактивные уроки</p>
+                                <p class="text-sm opacity-90">Обучение по современным методикам</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Role Selection Section (Custom) -->
+            <section class="py-5">
+                <div class="flex flex-col items-center text-center gap-4 mb-10">
+                    <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Кто вы?</h2>
+                    <p class="text-slate-600 dark:text-slate-400 max-w-2xl">
+                        Выберите соответствующую роль в зависимости от цели использования платформы.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Teacher Card -->
+                    <div
+                        class="group relative flex flex-col gap-4 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 transition-all cursor-pointer overflow-hidden">
+                        <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                            <span class="material-symbols-outlined !text-[120px] text-primary">person_apron</span>
+                        </div>
+                        <div
+                            class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-2">
+                            <span class="material-symbols-outlined">school</span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Я учитель</h3>
+                            <p class="text-slate-600 dark:text-slate-400">
+                                Создавайте планы уроков и следите за успеваемостью учеников. Получите доступ к
+                                методическим
+                                пособиям.
+                            </p>
+                        </div>
+                        <a href="register_ru.html"
+                            class="mt-auto pt-4 flex items-center text-primary font-bold group-hover:translate-x-1 transition-transform">
+                            Регистрация <span class="material-symbols-outlined ml-2">arrow_forward</span>
+                        </a>
+                    </div>
+                    <!-- Student Card -->
+                    <div
+                        class="group relative flex flex-col gap-4 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 transition-all cursor-pointer overflow-hidden">
+                        <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                            <span class="material-symbols-outlined !text-[120px] text-primary">backpack</span>
+                        </div>
+                        <div
+                            class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-600 mb-2">
+                            <span class="material-symbols-outlined">face</span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Я ученик</h3>
+                            <p class="text-slate-600 dark:text-slate-400">
+                                Выполняйте интересные задания и совершенствуйте свои знания. Подготовка к ЕНТ и
+                                дополнительные курсы.
+                            </p>
+                        </div>
+                        <a href="register_ru.html"
+                            class="mt-auto pt-4 flex items-center text-primary font-bold group-hover:translate-x-1 transition-transform">
+                            Начать <span class="material-symbols-outlined ml-2">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <!-- Courses Section -->
+            <section class="py-5" id="courses">
+                <div class="flex flex-col gap-4 mb-8">
+                    <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Учебные программы</h2>
+                    <p class="text-slate-600 dark:text-slate-400">Выберите курс, соответствующий вашему уровню.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Kazakh Language Course -->
+                    <div
+                        class="flex flex-col sm:flex-row gap-6 p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:shadow-md transition-shadow">
+                        <div
+                            class="shrink-0 w-full sm:w-48 h-48 rounded-xl bg-blue-100 dark:bg-slate-900 flex items-center justify-center relative overflow-hidden group">
+                            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                                data-alt="Open books stacked on a wooden table"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAJl_XoOBNMcMtaMjAlQGOylNnmfLFbyu3ZLWB9MjcGkq44lDhGklTrjGJQBHQZS_QO14_pIgS-xriFijXDR6CIYCATk2x0dLeU_izkq520Wr9BAaLUkpRNtiH2uc3UKHXhKGrQKfgyUZPVl7V7AVwC5BdHSCSb5YFGBnu99R8E_AQx7xGpkzD3SrwMBDNBT1LVPErf6lMDTGvDiEQ0eZHDduuM5HVelWCjvFK-nBmRSxM2eJOXbsJlBe8arD0aqu1pxdi6bw3vi9bd');">
+                            </div>
+                            <div class="absolute inset-0 bg-primary/20 group-hover:bg-primary/10 transition-colors">
+                            </div>
+                        </div>
+                        <div class="flex flex-col flex-1 justify-center gap-3">
+                            <div
+                                class="flex items-center gap-2 text-primary text-sm font-bold uppercase tracking-wider">
+                                <span class="material-symbols-outlined !text-lg">translate</span>
+                                Изучение языка
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Казахский язык</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 line-clamp-2">
+                                Грамматика, словарный запас и практика речи. Для начинающих и продолжающих.
+                            </p>
+                            <div
+                                class="mt-2 flex items-center gap-4 text-xs font-medium text-slate-500 dark:text-slate-500">
+                                <span class="flex items-center gap-1"><span
+                                        class="material-symbols-outlined !text-base">schedule</span> 45 часов</span>
+                                <span class="flex items-center gap-1"><span
+                                        class="material-symbols-outlined !text-base">signal_cellular_alt</span> Все
+                                    уровни</span>
+                            </div>
+                            <button
+                                class="mt-2 w-fit px-4 py-2 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-900 dark:text-white text-sm font-bold hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">
+                                Посмотреть курс
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Kazakh Literature Course -->
+                    <div
+                        class="flex flex-col sm:flex-row gap-6 p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:shadow-md transition-shadow">
+                        <div
+                            class="shrink-0 w-full sm:w-48 h-48 rounded-xl bg-amber-100 dark:bg-slate-900 flex items-center justify-center relative overflow-hidden group">
+                            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                                data-alt="Classic library interior with wooden shelves"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDmirpyYkeBlQBVwzFjgjTqmxgsRUW66n4Uv1J2WW_hnA2RhXAVuBfd7s27kTNhm2GZuGEWaBdIp627uZB7J0ALxobyW3U273fQm6S95hWKkdLhab0lN6HTjD6k8eT_W-U35SMxwvuBmoR05G1c1Z0lWEwc0LVnf_vY6cXE24KldfCPwFkp77mdcQpwLV6WPU2_pxy-ofLDpM9UxpaV0J_2xHS2I1vrzTjxTIKaCcLRPDlgOUBHRPevM9mmiY3SBmKfEEGrLRXjuBiv');">
+                            </div>
+                            <div class="absolute inset-0 bg-amber-600/20 group-hover:bg-amber-600/10 transition-colors">
+                            </div>
+                        </div>
+                        <div class="flex flex-col flex-1 justify-center gap-3">
+                            <div
+                                class="flex items-center gap-2 text-amber-600 dark:text-amber-500 text-sm font-bold uppercase tracking-wider">
+                                <span class="material-symbols-outlined !text-lg">history_edu</span>
+                                Литература
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Казахская литература</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 line-clamp-2">
+                                Классические произведения, история и анализ поэзии. Мир Абая, Шакарима и Магжана.
+                            </p>
+                            <div
+                                class="mt-2 flex items-center gap-4 text-xs font-medium text-slate-500 dark:text-slate-500">
+                                <span class="flex items-center gap-1"><span
+                                        class="material-symbols-outlined !text-base">schedule</span> 30 часов</span>
+                                <span class="flex items-center gap-1"><span
+                                        class="material-symbols-outlined !text-base">menu_book</span> 12 модулей</span>
+                            </div>
+                            <button
+                                class="mt-2 w-fit px-4 py-2 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-900 dark:text-white text-sm font-bold hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">
+                                Посмотреть курс
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Footer -->
+        <footer class="w-full border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 py-10 mt-10">
+            <div
+                class="max-w-[1200px] mx-auto px-4 md:px-10 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary">school</span>
+                    <span class="font-bold text-lg text-slate-900 dark:text-white">QazEdu</span>
+                </div>
+                <div class="flex gap-6 text-sm text-slate-500 dark:text-slate-400">
+                    <a class="hover:text-primary" href="#">Политика конфиденциальности</a>
+                    <a class="hover:text-primary" href="#">Правила</a>
+                    <a class="hover:text-primary" href="#">Помощь</a>
+                </div>
+                <div class="text-sm text-slate-400 dark:text-slate-500">
+                    © 2024 Платформа QazEdu. Все права защищены.
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

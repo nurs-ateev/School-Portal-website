@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html class="light" lang="kk">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Тақырыптар - Topics</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;family=Noto+Sans:wght@100..900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "primary-hover": "#0f6bd0",
+                        "background-light": "#f8fafc",
+                        "background-dark": "#101922",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1e293b",
+                        "text-main-light": "#0f172a",
+                        "text-main-dark": "#f1f5f9",
+                        "text-secondary-light": "#64748b",
+                        "text-secondary-dark": "#94a3b8",
+                        "border-light": "#e2e8f0",
+                        "border-dark": "#334155",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: { "DEFAULT": "0.375rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-text-main-light dark:text-text-main-dark min-h-screen flex flex-col">
+    <!-- Top Navigation Bar -->
+    <header
+        class="h-16 bg-surface-light dark:bg-surface-dark border-b border-border-light dark:border-border-dark flex items-center justify-between px-6 lg:px-10 shrink-0 z-20 sticky top-0">
+        <div class="flex items-center gap-4">
+            <div class="size-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined">school</span>
+            </div>
+            <h1
+                class="text-lg lg:text-xl font-bold tracking-tight text-text-main-light dark:text-text-main-dark hidden sm:block">
+                Qazaq Tili &amp; Ädebieti
+            </h1>
+        </div>
+        <div class="flex items-center gap-6">
+            <div class="flex bg-slate-100 dark:bg-slate-800 rounded-lg p-1">
+                <a href="#"
+                    class="px-4 py-1.5 rounded-md bg-white dark:bg-slate-700 shadow-sm text-xs font-bold text-primary transition-all">Qaz</a>
+                <a href="topics_ru.html" id="ruLink"
+                    class="px-4 py-1.5 rounded-md text-text-secondary-light dark:text-text-secondary-dark hover:text-text-main-light dark:hover:text-text-main-dark text-xs font-bold transition-all">Rus</a>
+            </div>
+            <div class="size-9 rounded-full bg-slate-200 dark:bg-slate-700"></div>
+        </div>
+    </header>
+
+    <div class="flex flex-1">
+        <!-- Sidebar Navigation -->
+        <aside
+            class="w-64 bg-surface-light dark:bg-surface-dark border-r border-border-light dark:border-border-dark hidden lg:flex flex-col justify-between py-6 px-4 sticky top-16 h-[calc(100vh-4rem)]">
+            <nav class="flex flex-col gap-2">
+                <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-secondary-light dark:text-text-secondary-dark hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary transition-colors group"
+                    href="teacher_dashboard.html">
+                    <span class="material-symbols-outlined text-[22px] group-hover:text-primary">dashboard</span>
+                    <span class="text-sm font-medium">Басты бет</span>
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-secondary-light dark:text-text-secondary-dark hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary transition-colors group"
+                    href="add_subject.html">
+                    <span class="material-symbols-outlined text-[22px] group-hover:text-primary">book_2</span>
+                    <span class="text-sm font-medium">Пән қосу</span>
+                </a>
+            </nav>
+            <div class="px-4">
+                <button
+                    class="logout-btn flex w-full cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-10 px-4 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-text-main-light dark:text-white text-sm font-bold transition-colors">
+                    <span class="material-symbols-outlined" style="font-size: 20px;">logout</span>
+                    <span class="truncate">Шығу</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 bg-background-light dark:bg-background-dark p-4 lg:p-8 scroll-smooth">
+            <div class="max-w-4xl mx-auto space-y-8">
+                <!-- Breadcrumbs & Header -->
+                <div>
+                    <div
+                        class="flex items-center gap-2 text-sm text-text-secondary-light dark:text-text-secondary-dark mb-4">
+                        <a href="teacher_dashboard.html" class="hover:text-primary hover:underline">Басты бет</a>
+                        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                        <a href="#" id="subjectLink" class="hover:text-primary hover:underline">Пән</a>
+                        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                        <span class="font-medium text-text-main-light dark:text-text-main-dark"
+                            id="breadcrumbGrade">Сынып</span>
+                    </div>
+
+                    <div class="flex justify-between items-center gap-4">
+                        <div>
+                            <h2 class="text-3xl font-bold tracking-tight text-text-main-light dark:text-text-main-dark">
+                                <span id="headerGrade"></span> Тақырыптары
+                            </h2>
+                            <p class="text-text-secondary-light dark:text-text-secondary-dark mt-1">
+                                Оқу бағдарламасын басқару
+                            </p>
+                        </div>
+                        <button id="addTopicBtn"
+                            class="flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white px-5 py-2.5 rounded-lg font-bold shadow-lg shadow-blue-500/20 transition-all active:scale-95">
+                            <span class="material-symbols-outlined text-[20px]">add</span>
+                            <span>Тақырып қосу</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Topics List -->
+                <div id="topicsContainer" class="space-y-4">
+                    <!-- Placeholder for empty state -->
+                    <div
+                        class="flex flex-col items-center justify-center p-12 border-2 border-dashed border-slate-300 dark:border-slate-700 rounded-xl">
+                        <span class="material-symbols-outlined text-4xl text-slate-400 mb-2">library_books</span>
+                        <p class="text-slate-500 font-medium">Бұл сыныпта әзірге тақырыптар жоқ</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Logic -->
+    <script type="module">
+        import { auth, db } from "./js/firebase-config.js";
+        import { doc, getDoc, collection, query, where, getDocs, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+        import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+        onAuthStateChanged(auth, async (user) => {
+            if (!user) {
+                window.location.href = 'login.html';
+            } else {
+                const urlParams = new URLSearchParams(window.location.search);
+                const subjectId = urlParams.get('subjectId');
+                const classId = urlParams.get('classId');
+                // Support legacy grade param just in case
+                let grade = urlParams.get('grade');
+
+                if (subjectId && (classId || grade)) {
+                    document.getElementById('subjectLink').href = `subject_details.html?id=${subjectId}`;
+
+                    if (classId) {
+                        const classDoc = await getDoc(doc(db, "classes", classId));
+                        if (classDoc.exists()) {
+                            const cls = classDoc.data();
+                            grade = cls.grade;
+                            document.getElementById('breadcrumbGrade').textContent = `${grade} "${cls.name}" сыныбы`;
+                            document.getElementById('headerGrade').textContent = `${grade} "${cls.name}" сыныбы`;
+
+                            const ruLink = document.getElementById('ruLink');
+                            if (ruLink) ruLink.href = `topics_ru.html?subjectId=${subjectId}&classId=${classId}`;
+                        }
+                    } else {
+                        document.getElementById('headerGrade').textContent = `${grade}-сынып`;
+                        const ruLink = document.getElementById('ruLink');
+                        if (ruLink) ruLink.href = `topics_ru.html?subjectId=${subjectId}&grade=${grade}`;
+                    }
+
+                    await loadPageData(subjectId, grade);
+
+                    // Add Topic Handler - Redirect to new page
+                    document.getElementById('addTopicBtn').addEventListener('click', () => {
+                        let url = `add_topic.html?subjectId=${subjectId}`;
+                        if (classId) url += `&classId=${classId}`;
+                        if (grade) url += `&grade=${grade}`;
+                        window.location.href = url;
+                    });
+
+                    loadTopics(subjectId, grade);
+
+                } else {
+                    window.location.href = 'teacher_dashboard.html';
+                }
+            }
+        });
+
+        const logoutBtn = document.querySelector('.logout-btn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', async () => {
+                await signOut(auth);
+                window.location.href = 'index.html';
+            });
+        }
+
+        async function loadPageData(subjectId, grade) {
+            try {
+                const subDoc = await getDoc(doc(db, "subjects", subjectId));
+                if (subDoc.exists()) {
+                    document.getElementById('subjectLink').textContent = subDoc.data().name;
+                }
+            } catch (e) { console.error(e); }
+        }
+
+
+        async function addTopic(subjectId, grade, title) {
+            try {
+                await addDoc(collection(db, "topics"), {
+                    subjectId,
+                    grade,
+                    title,
+                    createdAt: new Date().toISOString()
+                });
+                alert("Тақырып қосылды!");
+                loadTopics(subjectId, grade);
+            } catch (e) {
+                console.error("Error adding topic: ", e);
+                alert("Қате: " + e.message);
+            }
+        }
+
+        async function loadTopics(subjectId, grade) {
+            const container = document.getElementById('topicsContainer');
+            const q = query(
+                collection(db, "topics"),
+                where("subjectId", "==", subjectId),
+                where("grade", "==", grade)
+            );
+
+            try {
+                const querySnapshot = await getDocs(q);
+                if (querySnapshot.empty) {
+                    container.innerHTML = `
+                        <div class="flex flex-col items-center justify-center p-12 border-2 border-dashed border-slate-300 dark:border-slate-700 rounded-xl">
+                            <span class="material-symbols-outlined text-4xl text-slate-400 mb-2">library_books</span>
+                            <p class="text-slate-500 font-medium">Бұл сыныпта әзірге тақырыптар жоқ</p>
+                        </div>`;
+                    return;
+                }
+
+                container.innerHTML = '';
+                querySnapshot.forEach((doc) => {
+                    const topic = doc.data();
+                    const topicId = doc.id;
+                    const card = `
+                        <div class="bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark p-4 rounded-xl flex justify-between items-center hover:shadow-sm transition-shadow">
+                            <div>
+                                <h4 class="font-bold text-lg text-text-main-light dark:text-text-main-dark">${topic.title}</h4>
+                            </div>
+                            <a href="teacher_topic_details.html?id=${topicId}" class="flex items-center gap-2 text-primary font-bold text-sm hover:underline">
+                                <span>Көру</span>
+                                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                            </a>
+                        </div>
+                    `;
+                    container.insertAdjacentHTML('beforeend', card);
+                });
+            } catch (e) {
+                console.error("Error loading topics: ", e);
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html class="light" lang="kk">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Тақырып - Topic Details (Мұғалім)</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;family=Noto+Sans:wght@100..900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "primary-hover": "#0f6bd0",
+                        "background-light": "#f8fafc",
+                        "background-dark": "#101922",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1e293b",
+                        "text-main-light": "#0f172a",
+                        "text-main-dark": "#f1f5f9",
+                        "text-secondary-light": "#64748b",
+                        "text-secondary-dark": "#94a3b8",
+                        "border-light": "#e2e8f0",
+                        "border-dark": "#334155",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: { "DEFAULT": "0.375rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-text-main-light dark:text-text-main-dark min-h-screen flex flex-col">
+    <!-- Top Navigation Bar -->
+    <header
+        class="h-16 bg-surface-light dark:bg-surface-dark border-b border-border-light dark:border-border-dark flex items-center justify-between px-6 lg:px-10 shrink-0 z-20 sticky top-0">
+        <div class="flex items-center gap-4">
+            <div class="size-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined">school</span>
+            </div>
+            <h1
+                class="text-lg lg:text-xl font-bold tracking-tight text-text-main-light dark:text-text-main-dark hidden sm:block">
+                Qazaq Tili &amp; Ädebieti <span
+                    class="text-xs bg-primary/10 text-primary px-2 py-0.5 rounded ml-2">Мұғалім</span>
+            </h1>
+        </div>
+        <div class="flex items-center gap-6">
+            <div class="flex bg-slate-100 dark:bg-slate-800 rounded-lg p-1">
+                <span
+                    class="px-4 py-1.5 rounded-md bg-white dark:bg-slate-700 shadow-sm text-xs font-bold text-primary cursor-default">Qaz</span>
+                <a href="#" id="ruLink"
+                    class="px-4 py-1.5 rounded-md text-text-secondary-light dark:text-text-secondary-dark hover:text-text-main-light dark:hover:text-text-main-dark text-xs font-bold transition-all">Rus</a>
+            </div>
+            <!-- User Profile -->
+            <div class="size-9 rounded-full bg-slate-200 dark:bg-slate-700"></div>
+        </div>
+    </header>
+
+    <div class="flex flex-1">
+        <!-- Sidebar Navigation -->
+        <aside
+            class="w-64 bg-surface-light dark:bg-surface-dark border-r border-border-light dark:border-border-dark hidden lg:flex flex-col justify-between py-6 px-4 sticky top-16 h-[calc(100vh-4rem)]">
+            <nav class="flex flex-col gap-2">
+                <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-secondary-light dark:text-text-secondary-dark hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary transition-colors group"
+                    href="teacher_dashboard.html">
+                    <span class="material-symbols-outlined text-[22px] group-hover:text-primary">dashboard</span>
+                    <span class="text-sm font-medium">Басты бет</span>
+                </a>
+            </nav>
+            <div class="px-4">
+                <button
+                    class="logout-btn flex w-full cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-10 px-4 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-text-main-light dark:text-white text-sm font-bold transition-colors">
+                    <span class="material-symbols-outlined" style="font-size: 20px;">logout</span>
+                    <span class="truncate">Шығу</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 bg-background-light dark:bg-background-dark p-4 lg:p-8 scroll-smooth">
+            <div class="max-w-4xl mx-auto space-y-8">
+                <!-- Breadcrumbs -->
+                <div class="flex items-center gap-2 text-sm text-text-secondary-light dark:text-text-secondary-dark">
+                    <a href="teacher_dashboard.html" class="hover:text-primary hover:underline">Басты бет</a>
+                    <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                    <a href="#" id="backToTopics" class="hover:text-primary hover:underline">Тақырыптар</a>
+                    <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                    <span class="font-medium text-text-main-light dark:text-text-main-dark">Тақырып</span>
+                </div>
+
+                <div id="topicDetailsContainer">
+                    <div class="flex justify-center py-10">
+                        <span
+                            class="material-symbols-outlined animate-spin text-4xl text-primary">progress_activity</span>
+                    </div>
+                </div>
+
+                <!-- Test Results Section -->
+                <div class="mt-12 pt-8 border-t border-border-light dark:border-border-dark">
+                    <h3
+                        class="text-xl font-bold text-text-main-light dark:text-text-main-dark mb-6 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-green-600">leaderboard</span>
+                        Оқушылардың нәтижелері
+                    </h3>
+
+                    <div
+                        class="overflow-x-auto bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-xl shadow-sm">
+                        <table class="w-full text-left text-sm">
+                            <thead
+                                class="bg-slate-50 dark:bg-slate-800/50 border-b border-border-light dark:border-border-dark">
+                                <tr>
+                                    <th
+                                        class="px-6 py-4 font-bold text-text-secondary-light dark:text-text-secondary-dark">
+                                        Оқушы</th>
+                                    <th
+                                        class="px-6 py-4 font-bold text-text-secondary-light dark:text-text-secondary-dark">
+                                        Тест</th>
+                                    <th
+                                        class="px-6 py-4 font-bold text-text-secondary-light dark:text-text-secondary-dark">
+                                        Ұпай</th>
+                                    <th
+                                        class="px-6 py-4 font-bold text-text-secondary-light dark:text-text-secondary-dark">
+                                        Уақыт</th>
+                                </tr>
+                            </thead>
+                            <tbody id="resultsTableBody" class="divide-y divide-border-light dark:divide-border-dark">
+                                <tr>
+                                    <td colspan="4" class="px-6 py-8 text-center text-slate-500">Нәтижелер жүктелуде...
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script type="module">
+        import { auth, db } from "./js/firebase-config.js";
+        import { doc, getDoc, collection, query, where, getDocs, orderBy } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+        import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+        // Auth Check
+        onAuthStateChanged(auth, async (user) => {
+            if (!user) {
+                window.location.href = 'login.html';
+            } else {
+                const urlParams = new URLSearchParams(window.location.search);
+                const topicId = urlParams.get('id');
+
+                if (topicId) {
+                    await loadTopicDetails(topicId);
+                    await loadTestResults(topicId);
+
+                    // Update Language Link
+                    const ruLink = document.getElementById('ruLink');
+                    if (ruLink) ruLink.href = `teacher_topic_details_ru.html?id=${topicId}`;
+                } else {
+                    alert('Тақырып ID табылмады');
+                    window.location.href = 'teacher_dashboard.html';
+                }
+            }
+        });
+
+        // Logout
+        const logoutBtn = document.querySelector('.logout-btn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', async () => {
+                await signOut(auth);
+                window.location.href = 'index.html';
+            });
+        }
+
+        // --- Teacher View: Show Content + Correct Answers ---
+        // This function is mostly identical to student view but can show answers by default if we want, or add 'Edit' buttons.
+        async function loadTopicDetails(topicId) {
+            const container = document.getElementById('topicDetailsContainer');
+            if (!container) return;
+
+            try {
+                const docRef = doc(db, "topics", topicId);
+                const docSnap = await getDoc(docRef);
+
+                if (!docSnap.exists()) {
+                    container.innerHTML = '<p class="text-center text-red-500">Тақырып табылмады</p>';
+                    return;
+                }
+
+                const topic = docSnap.data();
+
+                // Set Back Link logic
+                const backLink = document.getElementById('backToTopics');
+                if (backLink) {
+                    // Try to reconstruct return URL
+                    let url = `topics.html?subjectId=${topic.subjectId}`;
+                    if (topic.grade) url += `&grade=${topic.grade}`;
+                    backLink.href = url;
+                }
+
+                const tests = [];
+                const otherAssignments = [];
+
+                if (topic.assignments && Array.isArray(topic.assignments)) {
+                    topic.assignments.forEach((a, i) => {
+                        if (a.type === 'test') tests.push({ ...a, index: i });
+                        else otherAssignments.push({ ...a, index: i });
+                    });
+                }
+
+                // Render Tests (Show answers for teacher)
+                let testsHtml = '';
+                tests.forEach(test => {
+                    const rawTest = test.content || '';
+                    const questionsBlocks = rawTest.split(/\n\s*\n/).filter(q => q.trim().length > 0);
+
+                    let questionsHtml = '';
+                    questionsBlocks.forEach((qBlock, qIndex) => {
+                        const lines = qBlock.split('\n');
+                        const questionText = lines[0];
+                        let answerIndex = -1;
+                        const optionsLines = [];
+
+                        lines.slice(1).forEach(l => {
+                            if (l.trim().startsWith('*Answer:')) {
+                                const ansChar = l.split(':')[1].trim().toUpperCase();
+                                if (ansChar === 'A') answerIndex = 0;
+                                else if (ansChar === 'B') answerIndex = 1;
+                                else if (ansChar === 'C') answerIndex = 2;
+                                else if (ansChar === 'D') answerIndex = 3;
+                                else if (ansChar === 'E') answerIndex = 4;
+                            } else {
+                                optionsLines.push(l);
+                            }
+                        });
+
+                        let optionsHtml = '';
+                        optionsLines.forEach((opt, oIndex) => {
+                            // Highlight correct answer for teacher
+                            const isCorrect = (oIndex === answerIndex);
+                            const styleClass = isCorrect
+                                ? "bg-green-100 dark:bg-green-900/30 border-green-300 dark:border-green-800"
+                                : "hover:bg-white dark:hover:bg-slate-700 border-transparent";
+
+                            optionsHtml += `
+                                <div class="flex items-start gap-3 p-3 rounded-lg border transition-colors ${styleClass}">
+                                    <div class="pt-0.5">
+                                        <input type="radio" disabled ${isCorrect ? 'checked' : ''} class="size-4 text-primary border-slate-300">
+                                    </div>
+                                    <span class="text-sm text-slate-700 dark:text-slate-200 leading-relaxed ${isCorrect ? 'font-bold text-green-700 dark:text-green-400' : ''}">
+                                        ${opt} ${isCorrect ? '(Дұрыс жауап)' : ''}
+                                    </span>
+                                </div>
+                            `;
+                        });
+
+                        questionsHtml += `
+                            <div class="mb-6 p-4 rounded-xl border border-border-light dark:border-border-dark bg-slate-50/50 dark:bg-slate-800/50">
+                                <div class="flex justify-between gap-4 mb-3">
+                                    <h6 class="font-bold text-base text-text-main-light dark:text-text-main-dark">
+                                        <span class="text-primary mr-2">${qIndex + 1}.</span>${questionText}
+                                    </h6>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    ${optionsHtml}
+                                </div>
+                            </div>
+                        `;
+                    });
+
+                    testsHtml += `
+                        <div class="mt-6 border-t border-dashed border-border-light dark:border-border-dark pt-6">
+                            <h5 class="text-lg font-bold text-text-main-light dark:text-text-main-dark mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-purple-500">quiz</span>
+                                Тест тапсырмасы (Жауаптарымен)
+                            </h5>
+                            <div class="space-y-4">
+                                ${questionsHtml}
+                            </div>
+                        </div>
+                    `;
+                });
+
+                // Render Other
+                let othersHtml = '';
+                if (otherAssignments.length > 0) {
+                    othersHtml += `<div class="mt-8 pt-6 border-t border-border-light dark:border-border-dark">
+                             <h5 class="text-lg font-bold text-text-main-light dark:text-text-main-dark mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-orange-500">assignment</span>
+                                Тапсырмалар мен сұрақтар
+                             </h5>
+                             <div class="grid gap-4">`;
+
+                    otherAssignments.forEach(assign => {
+                        let content = '';
+                        if (assign.type === 'file') {
+                            content = `
+                                    <a href="${assign.url}" target="_blank" class="flex items-center gap-3 p-3 rounded-lg bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 hover:bg-blue-100 transition-colors group">
+                                        <div class="size-10 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform">
+                                            <span class="material-symbols-outlined">download</span>
+                                        </div>
+                                        <div class="flex-1">
+                                            <p class="text-sm font-bold">Файлды жүктеу</p>
+                                            <p class="text-xs opacity-75">Тапсырма құжаты</p>
+                                        </div>
+                                    </a>`;
+                        } else {
+                            content = `<div class="bg-slate-50 dark:bg-slate-800 p-4 rounded-lg text-sm leading-relaxed">${assign.content}</div>`;
+                        }
+
+                        othersHtml += `
+                                <div class="bg-white dark:bg-slate-900 border border-border-light dark:border-border-dark p-5 rounded-xl">
+                                    <h6 class="font-bold text-text-main-light dark:text-text-main-dark mb-3 text-sm uppercase tracking-wide opacity-70">
+                                        ${assign.title || 'Сұрақ'}
+                                    </h6>
+                                    ${content}
+                                </div>
+                            `;
+                    });
+                    othersHtml += `</div></div>`;
+                }
+
+                const dateHtml = topic.lessonDate ? `
+                    <div class="flex items-center gap-2 mb-4 text-slate-500 font-bold">
+                        <span class="material-symbols-outlined">calendar_month</span>
+                        <span>${new Date(topic.lessonDate).toLocaleDateString('kk-KZ', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+                    </div>
+                ` : '';
+
+                const html = `
+                    <div class="bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark p-6 lg:p-10 rounded-2xl shadow-sm">
+                        <div class="mb-8 border-b border-border-light dark:border-border-dark pb-6">
+                            ${dateHtml}
+                            <h2 class="text-3xl font-bold text-text-main-light dark:text-text-main-dark mb-2">${topic.title}</h2>
+                        </div>
+                        <div class="space-y-8">
+                             ${topic.content ? `
+                                <div class="prose dark:prose-invert max-w-none">
+                                    <h5 class="flex items-center gap-2 text-xl font-bold text-slate-800 dark:text-slate-100 mb-4">
+                                        <span class="material-symbols-outlined text-primary">menu_book</span>
+                                        Тақырып бойынша ережелер мен түсіндірмелер
+                                    </h5>
+                                    <div class="text-base leading-7 text-slate-700 dark:text-slate-300 bg-slate-50/80 dark:bg-slate-800/50 p-6 rounded-2xl border border-slate-100 dark:border-slate-800 whitespace-pre-wrap font-body">
+                                        ${topic.content}
+                                    </div>
+                                </div>
+                            ` : ''}
+
+                            ${topic.lessonFileUrl ? `
+                                <div class="flex justify-start">
+                                    <a href="${topic.lessonFileUrl}" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-text-main-light dark:text-text-main-dark font-bold text-sm hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                                        <span class="material-symbols-outlined">attachment</span>
+                                        Қосымша материалды ашу
+                                    </a>
+                                </div>
+                            ` : ''}
+
+                            ${testsHtml}
+                            ${othersHtml}
+                        </div>
+                    </div>
+                `;
+
+                container.innerHTML = html;
+
+            } catch (error) {
+                console.error("Error loading topic details:", error);
+                container.innerHTML = '<p class="text-center text-red-500">Қате шықты</p>';
+            }
+        }
+
+        async function loadTestResults(topicId) {
+            const container = document.getElementById('resultsTableBody');
+            try {
+                const q = query(
+                    collection(db, "test_results"),
+                    where("topicId", "==", topicId),
+                    orderBy("submittedAt", "desc")
+                );
+                const snapshot = await getDocs(q);
+
+                if (snapshot.empty) {
+                    container.innerHTML = `
+                        <tr>
+                            <td colspan="4" class="px-6 py-8 text-center text-slate-500">Әзірге ешкім тест тапсырған жоқ</td>
+                        </tr>
+                    `;
+                    return;
+                }
+
+                container.innerHTML = '';
+                snapshot.forEach(doc => {
+                    const data = doc.data();
+                    const date = new Date(data.submittedAt).toLocaleString('kk-KZ');
+                    const row = `
+                        <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors border-b border-border-light dark:border-border-dark last:border-0">
+                            <td class="px-6 py-4 font-medium text-text-main-light dark:text-text-main-dark">
+                                ${data.studentName || 'Белгісіз оқушы'}
+                            </td>
+                            <td class="px-6 py-4 text-text-secondary-light dark:text-text-secondary-dark">
+                                ${typeof data.testIndex !== 'undefined' ? `Тест #${Number(data.testIndex) + 1}` : 'Тест'}
+                            </td>
+                            <td class="px-6 py-4">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold ${data.score === data.total ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400' : 'bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-300'}">
+                                    ${data.score} / ${data.total}
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 text-sm text-text-secondary-light dark:text-text-secondary-dark">
+                                ${date}
+                            </td>
+                        </tr>
+                    `;
+                    container.innerHTML += row;
+                });
+
+            } catch (error) {
+                console.error("Error loading results:", error);
+                // Index might be missing for complex queries. 
+                // If orderBy fails, try without it or advise user to create index.
+                // Ideally we handle this gracefully.
+                container.innerHTML = `<tr><td colspan="4" class="px-6 py-4 text-center text-red-500">Нәтижелерді жүктеу қатесі. Индекстерді тексеріңіз.</td></tr>`;
+            }
+        }
+    </script>
+</body>
+
+</html>

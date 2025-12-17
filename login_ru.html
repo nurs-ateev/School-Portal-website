@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Вход - QazEdu</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "primary-dark": "#0b5ec2",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1b2834",
+                        "text-main-light": "#0d141b",
+                        "text-main-dark": "#e7edf3",
+                        "text-secondary-light": "#4c739a",
+                        "text-secondary-dark": "#94a3b8",
+                        "border-light": "#cfdbe7",
+                        "border-dark": "#2d4052",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-text-main-light dark:text-text-main-dark transition-colors duration-200">
+    <div class="flex flex-col min-h-screen">
+        <!-- Header -->
+        <header
+            class="w-full bg-surface-light dark:bg-surface-dark border-b border-border-light dark:border-border-dark px-6 py-4">
+            <div class="max-w-7xl mx-auto flex items-center justify-between">
+                <!-- Logo Area -->
+                <div class="flex items-center gap-3">
+                    <div class="flex items-center justify-center size-10 rounded-lg bg-primary/10 text-primary">
+                        <span class="material-symbols-outlined text-3xl">menu_book</span>
+                    </div>
+                    <h2
+                        class="text-xl font-bold tracking-tight text-text-main-light dark:text-text-main-dark hidden sm:block">
+                        QazEdu</h2>
+                </div>
+                <!-- Language Switcher -->
+                <div class="flex items-center">
+                    <button
+                        class="group flex items-center gap-2 px-4 py-2 rounded-lg bg-background-light dark:bg-background-dark hover:bg-border-light dark:hover:bg-border-dark transition-all">
+                        <span
+                            class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark group-hover:text-primary transition-colors text-xl">language</span>
+                        <a href="login.html"
+                            class="text-sm font-semibold text-text-secondary-light hover:text-primary mr-1">Qazaqsha</a>
+                        <span class="text-text-secondary-light">/</span>
+                        <span class="text-sm font-bold text-primary ml-1">Русский</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content -->
+        <main class="flex-1 flex items-center justify-center p-4 sm:p-8">
+            <div
+                class="w-full max-w-[1200px] bg-surface-light dark:bg-surface-dark rounded-2xl shadow-xl overflow-hidden flex flex-col lg:flex-row min-h-[600px]">
+                <!-- Left Side: Image/Illustration -->
+                <div
+                    class="w-full lg:w-1/2 bg-blue-50 dark:bg-blue-900/20 relative hidden lg:flex flex-col items-center justify-center p-12 text-center">
+                    <div class="absolute inset-0 bg-cover bg-center opacity-90 mix-blend-multiply"
+                        data-alt="Open book on a wooden table with soft lighting"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC8l4dO4-ILU8sDQdLqOHodU1Bao7Z1r2y3Cquua_bSSYdH2JboCVQG4Mykfm403QVhsfrP2EdZyDaG43WfhvLh0jYXbu_fAEWiw7nSWndmtDB1lLnSO53BRYVlrQXpkvGRQzpUFfqGRnoCNwoaaNxdVrUQvFmvFTksDaxZkkROtUwAuIAJjhQIxRP8VxL9NkXy39vNxfELCRXa6uprikkklhbwV1odV7Dqf-llkCAfe1ubF-Lbvi1ElM1u_ptqBRvN9ZeErK9Ggq7y');">
+                    </div>
+                    <div class="absolute inset-0 bg-primary/40 dark:bg-primary/60 mix-blend-multiply"></div>
+                    <div class="relative z-10 text-white max-w-md">
+                        <h2 class="text-4xl font-black mb-6 leading-tight">Знание – иголкой колодец копать</h2>
+                        <p class="text-lg font-medium text-white/90">Добро пожаловать на портал углубленного изучения
+                            казахского языка и литературы.</p>
+                    </div>
+                </div>
+                <!-- Right Side: Login Form -->
+                <div class="w-full lg:w-1/2 flex flex-col justify-center p-8 sm:p-12 lg:p-16 relative">
+                    <!-- Mobile Image Banner (visible only on mobile) -->
+                    <div class="lg:hidden w-full h-32 rounded-xl mb-8 bg-cover bg-center"
+                        data-alt="Mobile header showing books"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDlOXv5hzNff0IWjfsXc6uruZdPjQ7OnTZjPj4lTTfktEenJzotGlyIUmdW0oOo5Vr6KW9zJSUXmytsnVC6GbKmLQcVNzwCdX08MTzYbY4uLWeT-atoPKmmmMI8ue1k-DyWbaxtRw5wLCuAGbCX4Wrt3yQkwJ4fv1hXz75qGuC38T6sFCvNtTj_u0ki1sGCP6jKFL8RNvb_ZAyCu-YlfGY6GmUGhGq2vpwMg1Pih3JZ9WABOMpTQSAqCnoTn0pMszQlLQtSa79mn98Z');">
+                        <div class="w-full h-full bg-primary/40 rounded-xl"></div>
+                    </div>
+                    <div class="w-full max-w-md mx-auto space-y-8">
+                        <div class="text-center lg:text-left">
+                            <h1 class="text-3xl font-black text-text-main-light dark:text-text-main-dark mb-2">Добро
+                                пожаловать!</h1>
+                            <p class="text-text-secondary-light dark:text-text-secondary-dark">Введите свои данные для
+                                входа на портал</p>
+                        </div>
+                        <form class="space-y-6" id="loginForm">
+                            <!-- Email/Username Input -->
+                            <div class="space-y-2">
+                                <label class="block text-sm font-medium text-text-main-light dark:text-text-main-dark"
+                                    for="email">
+                                    Электронная почта
+                                </label>
+                                <div class="relative group">
+                                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                        <span
+                                            class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark group-focus-within:text-primary">person</span>
+                                    </div>
+                                    <input
+                                        class="block w-full pl-10 pr-3 py-3 rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark text-text-main-light dark:text-text-main-dark placeholder-text-secondary-light/50 focus:ring-2 focus:ring-primary focus:border-primary sm:text-sm transition-shadow"
+                                        id="email" placeholder="user@example.com" type="text" required />
+                                </div>
+                            </div>
+                            <!-- Password Input -->
+                            <div class="space-y-2">
+                                <div class="flex items-center justify-between">
+                                    <label
+                                        class="block text-sm font-medium text-text-main-light dark:text-text-main-dark"
+                                        for="password">
+                                        Пароль
+                                    </label>
+                                </div>
+                                <div class="relative group">
+                                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                        <span
+                                            class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark group-focus-within:text-primary">lock</span>
+                                    </div>
+                                    <input
+                                        class="block w-full pl-10 pr-10 py-3 rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark text-text-main-light dark:text-text-main-dark placeholder-text-secondary-light/50 focus:ring-2 focus:ring-primary focus:border-primary sm:text-sm transition-shadow"
+                                        id="password" placeholder="••••••••" type="password" required />
+                                    <button
+                                        class="absolute inset-y-0 right-0 pr-3 flex items-center text-text-secondary-light dark:text-text-secondary-dark hover:text-primary transition-colors cursor-pointer"
+                                        type="button">
+                                        <span class="material-symbols-outlined text-[20px]">visibility</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Remember Me & Forgot Password -->
+                            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                                <label class="flex items-center gap-2 cursor-pointer group">
+                                    <div class="relative flex items-center">
+                                        <input
+                                            class="peer size-5 rounded border-2 border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark text-primary focus:ring-2 focus:ring-primary/50 focus:ring-offset-0 checked:bg-primary checked:border-primary transition-all cursor-pointer"
+                                            type="checkbox" />
+                                        <svg class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 size-3.5 text-white pointer-events-none opacity-0 peer-checked:opacity-100 transition-opacity"
+                                            fill="none" viewbox="0 0 14 14">
+                                            <path d="M3 7L5.5 9.5L11.5 3.5" stroke="currentColor" stroke-linecap="round"
+                                                stroke-linejoin="round" stroke-width="2"></path>
+                                        </svg>
+                                    </div>
+                                    <span
+                                        class="text-sm text-text-main-light dark:text-text-main-dark group-hover:text-primary transition-colors select-none">
+                                        Запомнить меня
+                                    </span>
+                                </label>
+                                <a class="text-sm font-medium text-primary hover:text-primary-dark hover:underline transition-colors"
+                                    href="#">
+                                    Забыли пароль?
+                                </a>
+                            </div>
+                            <!-- Submit Button -->
+                            <button
+                                class="w-full flex justify-center py-3.5 px-4 border border-transparent rounded-lg shadow-sm text-sm font-bold text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all transform active:scale-[0.98]"
+                                type="submit">
+                                Войти
+                            </button>
+                            <!-- Register Link -->
+                            <div class="relative py-4">
+                                <div class="absolute inset-0 flex items-center">
+                                    <div class="w-full border-t border-border-light dark:border-border-dark"></div>
+                                </div>
+                                <div class="relative flex justify-center text-sm">
+                                    <span
+                                        class="px-2 bg-surface-light dark:bg-surface-dark text-text-secondary-light dark:text-text-secondary-dark">
+                                        Нет аккаунта?
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <a class="text-sm font-bold text-primary hover:text-primary-dark transition-colors inline-flex items-center gap-1 group"
+                                    href="register_ru.html">
+                                    Регистрация
+                                    <span
+                                        class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

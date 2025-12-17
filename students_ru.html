@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html class="light" lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Ученики - Students</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;family=Noto+Sans:wght@100..900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "primary-hover": "#0f6bd0",
+                        "background-light": "#f8fafc",
+                        "background-dark": "#101922",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1e293b",
+                        "text-main-light": "#0f172a",
+                        "text-main-dark": "#f1f5f9",
+                        "text-secondary-light": "#64748b",
+                        "text-secondary-dark": "#94a3b8",
+                        "border-light": "#e2e8f0",
+                        "border-dark": "#334155",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-text-main-light dark:text-text-main-dark min-h-screen flex flex-col overflow-hidden">
+    <!-- Top Navigation Bar -->
+    <header
+        class="h-16 bg-surface-light dark:bg-surface-dark border-b border-border-light dark:border-border-dark flex items-center justify-between px-6 lg:px-10 shrink-0 z-20 sticky top-0">
+        <div class="flex items-center gap-4">
+            <div class="size-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined">school</span>
+            </div>
+            <h1
+                class="text-lg lg:text-xl font-bold tracking-tight text-text-main-light dark:text-text-main-dark hidden sm:block">
+                Qazaq Tili &amp; Ädebieti</h1>
+        </div>
+        <div class="flex items-center gap-6">
+            <!-- Language Switcher -->
+            <div class="flex bg-slate-100 dark:bg-slate-800 rounded-lg p-1">
+                <a href="students.html"
+                    class="px-4 py-1.5 rounded-md text-text-secondary-light dark:text-text-secondary-dark hover:text-text-main-light dark:hover:text-text-main-dark text-xs font-bold transition-all">Qaz</a>
+                <a href="#"
+                    class="px-4 py-1.5 rounded-md bg-white dark:bg-slate-700 shadow-sm text-xs font-bold text-primary transition-all">Rus</a>
+            </div>
+            <!-- Notifications -->
+            <button
+                class="relative text-text-secondary-light dark:text-text-secondary-dark hover:text-primary transition-colors">
+                <span class="material-symbols-outlined">notifications</span>
+            </button>
+            <!-- User Profile -->
+            <div class="flex items-center gap-3 pl-4 border-l border-border-light dark:border-border-dark">
+                <div class="flex flex-col items-end hidden md:flex">
+                    <span class="text-sm font-semibold">Аскар (Учитель)</span>
+                    <span class="text-xs text-text-secondary-light dark:text-text-secondary-dark">Казахский язык</span>
+                </div>
+                <div class="size-9 rounded-full bg-cover bg-center border border-border-light dark:border-border-dark cursor-pointer"
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCa4ZE-q9EYevR2yvvXpaC4hkr3uIQZvHTdqIgXu9EUgmjR3nz2jwIkRRZc5esHLpnJFD6_7k3LXozlBTA0oaIDMfloSD3MGuXTfh9Ojtyq64QjAEdzLoR_IJq27Q4EHug4ctGTkSfi02DY01agqV7wmyY0M5KAro9EfUE40yyniCsK0bK4ksc3Ltb78IjImezlA8eV9jhTaytMHrjW4a19ro9KBRomGbKaXaUgG4dEjEdXYVZQ-Kl7_VAiMSgykWNLwi5I9Bow5nEP');">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex flex-1">
+        <!-- Sidebar Navigation -->
+        <aside
+            class="w-64 bg-surface-light dark:bg-surface-dark border-r border-border-light dark:border-border-dark hidden lg:flex flex-col justify-between py-6 px-4 sticky top-16 h-[calc(100vh-4rem)]">
+            <div class="flex flex-col gap-2">
+                <nav class="flex flex-col gap-2">
+                    <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-secondary-light dark:text-text-secondary-dark hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary transition-colors group"
+                        href="teacher_dashboard_ru.html">
+                        <span class="material-symbols-outlined text-[22px] group-hover:text-primary">dashboard</span>
+                        <span class="text-sm font-medium">Главная</span>
+                    </a>
+                    <a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary transition-colors"
+                        href="#">
+                        <span class="material-symbols-outlined filled text-[22px]">groups</span>
+                        <span class="text-sm font-bold">Ученики</span>
+                    </a>
+                    <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-secondary-light dark:text-text-secondary-dark hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary transition-colors group"
+                        href="assignments_ru.html">
+                        <span
+                            class="material-symbols-outlined text-[22px] group-hover:text-primary">assignment_add</span>
+                        <span class="text-sm font-medium">Задания</span>
+                    </a>
+                    <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-secondary-light dark:text-text-secondary-dark hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary transition-colors group"
+                        href="grades_ru.html">
+                        <span class="material-symbols-outlined text-[22px] group-hover:text-primary">star</span>
+                        <span class="text-sm font-medium">Оценки</span>
+                    </a>
+                </nav>
+            </div>
+            <!-- Logout Button -->
+            <button
+                class="logout-btn flex w-full cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-10 px-4 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-text-main-light dark:text-white text-sm font-bold leading-normal tracking-[0.015em] transition-colors">
+                <span class="material-symbols-outlined" style="font-size: 20px;">logout</span>
+                <span class="truncate">Выйти</span>
+            </button>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main
+            class="flex-1 bg-background-light dark:bg-background-dark p-4 lg:p-8 scroll-smooth flex flex-col items-center justify-center text-center">
+            <div
+                class="p-8 rounded-2xl bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark shadow-sm max-w-lg">
+                <div
+                    class="size-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 text-primary">
+                    <span class="material-symbols-outlined text-[32px]">engineering</span>
+                </div>
+                <h2 class="text-2xl font-bold text-text-main-light dark:text-text-main-dark mb-2">В разработке</h2>
+                <p class="text-text-secondary-light dark:text-text-secondary-dark mb-6">Эта страница находится в стадии
+                    разработки. Скоро запустим!</p>
+                <a href="teacher_dashboard_ru.html"
+                    class="inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-primary hover:bg-primary-hover text-white font-bold transition-colors">
+                    Вернуться на главную
+                </a>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

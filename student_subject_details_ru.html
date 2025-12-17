@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html class="light" lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>О предмете - Subject Details</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;family=Noto+Sans:wght@100..900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "primary-hover": "#0f6bd0",
+                        "background-light": "#f8fafc",
+                        "background-dark": "#101922",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1e293b",
+                        "text-main-light": "#0f172a",
+                        "text-main-dark": "#f1f5f9",
+                        "text-secondary-light": "#64748b",
+                        "text-secondary-dark": "#94a3b8",
+                        "border-light": "#e2e8f0",
+                        "border-dark": "#334155",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-text-main-light dark:text-text-main-dark min-h-screen flex flex-col">
+    <!-- Top Navigation Bar -->
+    <header
+        class="h-16 bg-surface-light dark:bg-surface-dark border-b border-border-light dark:border-border-dark flex items-center justify-between px-6 lg:px-10 shrink-0 z-20 sticky top-0">
+        <div class="flex items-center gap-4">
+            <div class="size-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined">school</span>
+            </div>
+            <h1
+                class="text-lg lg:text-xl font-bold tracking-tight text-text-main-light dark:text-text-main-dark hidden sm:block">
+                Qazaq Tili &amp; Ädebieti
+            </h1>
+        </div>
+        <div class="flex items-center gap-6">
+            <!-- Language Switcher -->
+            <div class="flex bg-slate-100 dark:bg-slate-800 rounded-lg p-1">
+                <a href="student_subject_details.html" id="kzLink"
+                    class="px-4 py-1.5 rounded-md text-text-secondary-light dark:text-text-secondary-dark hover:text-text-main-light dark:hover:text-text-main-dark text-xs font-bold transition-all">Qaz</a>
+                <a href="#"
+                    class="px-4 py-1.5 rounded-md bg-white dark:bg-slate-700 shadow-sm text-xs font-bold text-primary transition-all">Rus</a>
+            </div>
+            <!-- User Profile (Placeholder) -->
+            <div class="size-9 rounded-full bg-slate-200 dark:bg-slate-700"></div>
+        </div>
+    </header>
+
+    <div class="flex flex-1">
+        <!-- Sidebar Navigation -->
+        <aside
+            class="w-64 bg-surface-light dark:bg-surface-dark border-r border-border-light dark:border-border-dark hidden lg:flex flex-col justify-between py-6 px-4 sticky top-16 h-[calc(100vh-4rem)]">
+            <nav class="flex flex-col gap-2">
+                <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-secondary-light dark:text-text-secondary-dark hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary transition-colors group"
+                    href="student_dashboard_ru.html">
+                    <span class="material-symbols-outlined text-[22px] group-hover:text-primary">home</span>
+                    <span class="text-sm font-medium">Главная</span>
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined text-[22px] filled">book_2</span>
+                    <span class="text-sm font-bold">Мои курсы</span>
+                </a>
+            </nav>
+            <div class="px-4">
+                <button
+                    class="logout-btn flex w-full cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-10 px-4 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-text-main-light dark:text-white text-sm font-bold transition-colors">
+                    <span class="material-symbols-outlined" style="font-size: 20px;">logout</span>
+                    <span class="truncate">Выйти</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 overflow-y-auto bg-background-light dark:bg-background-dark p-4 lg:p-8 scroll-smooth">
+            <div class="max-w-4xl mx-auto space-y-8">
+                <!-- Breadcrumbs & Header -->
+                <div>
+                    <div
+                        class="flex items-center gap-2 text-sm text-text-secondary-light dark:text-text-secondary-dark mb-4">
+                        <a href="student_dashboard_ru.html" class="hover:text-primary hover:underline">Главная</a>
+                        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                        <span class="font-medium text-text-main-light dark:text-text-main-dark"
+                            id="breadcrumbSubjectName">Предмет</span>
+                    </div>
+
+                    <div>
+                        <h2 class="text-3xl font-bold tracking-tight text-text-main-light dark:text-text-main-dark"
+                            id="pageSubjectName">
+                            <span
+                                class="animate-pulse bg-slate-200 dark:bg-slate-700 rounded h-8 w-48 inline-block"></span>
+                        </h2>
+                        <p class="text-text-secondary-light dark:text-text-secondary-dark mt-1"
+                            id="pageSubjectDescription">
+                            <span
+                                class="animate-pulse bg-slate-200 dark:bg-slate-700 rounded h-4 w-64 inline-block"></span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Topics List -->
+                <div>
+                    <h3
+                        class="text-xl font-bold text-text-main-light dark:text-text-main-dark mb-6 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary">menu_book</span>
+                        Список уроков
+                    </h3>
+
+                    <div class="flex flex-col gap-4" id="topicsContainer">
+                        <!-- Dynamic Topics will be loaded here -->
+                        <div
+                            class="flex flex-col items-center justify-center p-10 border-2 border-dashed border-slate-300 dark:border-slate-700 rounded-xl">
+                            <span
+                                class="material-symbols-outlined text-4xl text-slate-400 mb-2 animate-spin">refresh</span>
+                            <p class="text-slate-500 font-medium">Загрузка уроков...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module">
+        import { auth, db } from "./js/firebase-config.js";
+        import { doc, getDoc, collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+        import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+        // Auth Check
+        onAuthStateChanged(auth, async (user) => {
+            if (!user) {
+                window.location.href = 'login_ru.html';
+            } else {
+                const urlParams = new URLSearchParams(window.location.search);
+                const subjectId = urlParams.get('id');
+
+                if (subjectId) {
+                    // Update Language Link
+                    const kzLink = document.getElementById('kzLink');
+                    if (kzLink) kzLink.href = `student_subject_details.html?id=${subjectId}`;
+
+                    await loadSubjectDetails(subjectId);
+                    await loadTopics(subjectId);
+                } else {
+                    alert('ID предмета не найден');
+                    window.location.href = 'student_dashboard_ru.html';
+                }
+            }
+        });
+
+        // Logout
+        const logoutBtn = document.querySelector('.logout-btn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', async () => {
+                await signOut(auth);
+                window.location.href = 'index_ru.html';
+            });
+        }
+
+        async function loadSubjectDetails(subjectId) {
+            try {
+                const docRef = doc(db, "subjects", subjectId);
+                const docSnap = await getDoc(docRef);
+
+                if (docSnap.exists()) {
+                    const data = docSnap.data();
+                    document.getElementById('breadcrumbSubjectName').textContent = data.name;
+                    document.getElementById('pageSubjectName').textContent = data.name;
+                    document.getElementById('pageSubjectDescription').textContent = data.description || 'Нет описания';
+                } else {
+                    document.getElementById('pageSubjectName').textContent = "Предмет не найден";
+                }
+            } catch (error) {
+                console.error("Error getting document:", error);
+            }
+        }
+
+        async function loadTopics(subjectId) {
+            const container = document.getElementById('topicsContainer');
+            if (!container) return;
+
+            try {
+                // Fetch topics for this subject
+                const q = query(collection(db, "topics"), where("subjectId", "==", subjectId));
+                const querySnapshot = await getDocs(q);
+
+                if (querySnapshot.empty) {
+                    container.innerHTML = `
+                        <div class="flex flex-col items-center justify-center p-10 border-2 border-dashed border-slate-300 dark:border-slate-700 rounded-xl">
+                            <span class="material-symbols-outlined text-4xl text-slate-400 mb-2">menu_book</span>
+                            <p class="text-slate-500 font-medium">По этому предмету пока нет уроков</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                container.innerHTML = '';
+
+                querySnapshot.forEach((doc) => {
+                    const topic = doc.data();
+                    const topicId = doc.id;
+                    const dateStr = topic.lessonDate ? new Date(topic.lessonDate).toLocaleDateString('ru-RU') : 'Дата не указана';
+
+                    const cardHTML = `
+                        <div class="bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark p-6 rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4">
+                            <div>
+                                <h4 class="text-xl font-bold text-text-main-light dark:text-text-main-dark text-primary mb-1">${topic.title}</h4>
+                                <div class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 font-medium">
+                                    <span class="material-symbols-outlined text-[18px]">calendar_month</span>
+                                    <span>${dateStr}</span>
+                                </div>
+                            </div>
+                            
+                            <a href="student_topic_details_ru.html?id=${topicId}" 
+                               class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary hover:bg-primary-hover text-white font-bold transition-colors shadow-lg shadow-blue-500/30">
+                                <span>Подробнее</span>
+                                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                            </a>
+                        </div>
+                    `;
+                    container.innerHTML += cardHTML;
+                });
+
+            } catch (error) {
+                console.error("Error loading topics:", error);
+                container.innerHTML = '<p class="text-red-500 text-center">Ошибка при загрузке уроков</p>';
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html class="light" lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Добавить тему - Add Topic</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;family=Noto+Sans:wght@100..900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "primary-hover": "#0f6bd0",
+                        "background-light": "#f8fafc",
+                        "background-dark": "#101922",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1e293b",
+                        "text-main-light": "#0f172a",
+                        "text-main-dark": "#f1f5f9",
+                        "text-secondary-light": "#64748b",
+                        "text-secondary-dark": "#94a3b8",
+                        "border-light": "#e2e8f0",
+                        "border-dark": "#334155",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: { "DEFAULT": "0.375rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-text-main-light dark:text-text-main-dark min-h-screen flex flex-col">
+    <!-- Top Navigation Bar -->
+    <header
+        class="h-16 bg-surface-light dark:bg-surface-dark border-b border-border-light dark:border-border-dark flex items-center justify-between px-6 lg:px-10 shrink-0 z-20 sticky top-0">
+        <div class="flex items-center gap-4">
+            <div class="size-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined">school</span>
+            </div>
+            <h1
+                class="text-lg lg:text-xl font-bold tracking-tight text-text-main-light dark:text-text-main-dark hidden sm:block">
+                Qazaq Tili &amp; Ädebieti
+            </h1>
+        </div>
+        <div class="flex items-center gap-6">
+            <div class="flex bg-slate-100 dark:bg-slate-800 rounded-lg p-1">
+                <a href="#" id="kzLink"
+                    class="px-4 py-1.5 rounded-md text-text-secondary-light dark:text-text-secondary-dark hover:text-text-main-light dark:hover:text-text-main-dark text-xs font-bold transition-all">Qaz</a>
+                <a href="#"
+                    class="px-4 py-1.5 rounded-md bg-white dark:bg-slate-700 shadow-sm text-xs font-bold text-primary transition-all">Rus</a>
+            </div>
+            <!-- User Profile -->
+            <div class="size-9 rounded-full bg-slate-200 dark:bg-slate-700"></div>
+        </div>
+    </header>
+
+    <div class="flex flex-1">
+        <!-- Sidebar Navigation -->
+        <aside
+            class="w-64 bg-surface-light dark:bg-surface-dark border-r border-border-light dark:border-border-dark hidden lg:flex flex-col justify-between py-6 px-4 sticky top-16 h-[calc(100vh-4rem)]">
+            <nav class="flex flex-col gap-2">
+                <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-secondary-light dark:text-text-secondary-dark hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary transition-colors group"
+                    href="teacher_dashboard_ru.html">
+                    <span class="material-symbols-outlined text-[22px] group-hover:text-primary">dashboard</span>
+                    <span class="text-sm font-medium">Главная</span>
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-secondary-light dark:text-text-secondary-dark hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary transition-colors group"
+                    href="add_subject_ru.html">
+                    <span class="material-symbols-outlined text-[22px] group-hover:text-primary">book_2</span>
+                    <span class="text-sm font-medium">Добавить предмет</span>
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-secondary-light dark:text-text-secondary-dark hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary transition-colors group"
+                    href="classes_ru.html">
+                    <span class="material-symbols-outlined text-[22px] group-hover:text-primary">groups</span>
+                    <span class="text-sm font-medium">Ученики</span>
+                </a>
+            </nav>
+            <div class="px-4">
+                <button
+                    class="logout-btn flex w-full cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-10 px-4 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-text-main-light dark:text-white text-sm font-bold transition-colors">
+                    <span class="material-symbols-outlined" style="font-size: 20px;">logout</span>
+                    <span class="truncate">Выйти</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 bg-background-light dark:bg-background-dark p-4 lg:p-8 scroll-smooth">
+            <div class="max-w-3xl mx-auto space-y-8">
+                <!-- Breadcrumbs -->
+                <div class="flex items-center gap-2 text-sm text-text-secondary-light dark:text-text-secondary-dark">
+                    <a href="teacher_dashboard_ru.html" class="hover:text-primary hover:underline">Главная</a>
+                    <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                    <a href="#" id="backToTopics" class="hover:text-primary hover:underline">Темы</a>
+                    <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                    <span class="font-medium text-text-main-light dark:text-text-main-dark">Добавить тему</span>
+                </div>
+
+                <div
+                    class="bg-surface-light dark:bg-surface-dark rounded-2xl border border-border-light dark:border-border-dark p-6 lg:p-10 shadow-sm">
+                    <h2 class="text-2xl font-bold text-text-main-light dark:text-text-main-dark mb-6">Создание новой
+                        темы</h2>
+
+                    <form id="createTopicForm" class="space-y-8">
+                        <!-- Topic Title -->
+                        <div>
+                            <label class="block text-2xl font-bold text-text-main-light dark:text-text-main-dark mb-2">
+                                Название темы
+                            </label>
+                            <input type="text" id="topicTitle"
+                                class="w-full text-xl font-bold rounded-xl bg-slate-50 dark:bg-slate-800 border-border-light dark:border-border-dark focus:ring-2 focus:ring-primary/50 outline-none p-4 transition-all placeholder:font-normal"
+                                placeholder="С заглавной буквы" required>
+                        </div>
+
+                        <!-- Lesson Date -->
+                        <div>
+                            <label class="block text-lg font-bold text-text-main-light dark:text-text-main-dark mb-2">
+                                Дата урока
+                            </label>
+                            <input type="date" id="lessonDate"
+                                class="w-full text-lg rounded-xl bg-slate-50 dark:bg-slate-800 border-border-light dark:border-border-dark focus:ring-2 focus:ring-primary/50 outline-none p-3 transition-all"
+                                required>
+                        </div>
+
+                        <!-- Lecture Notes -->
+                        <div>
+                            <label
+                                class="block text-lg font-bold text-text-main-light dark:text-text-main-dark mb-2 flex items-center gap-2">
+                                <span class="material-symbols-outlined">menu_book</span>
+                                Конспект (текст лекции)
+                            </label>
+                            <textarea id="topicContent" rows="10"
+                                class="w-full rounded-xl bg-slate-50 dark:bg-slate-800 border-border-light dark:border-border-dark focus:ring-2 focus:ring-primary/50 outline-none p-4 transition-all"
+                                placeholder="Напишите здесь полное содержание урока..."></textarea>
+                            <p class="text-xs text-text-secondary-light dark:text-text-secondary-dark mt-1">
+                                Этот раздел не должен быть коротким. Полный материал для учеников.
+                            </p>
+                        </div>
+
+                        <!-- Additional Materials (File) -->
+                        <div>
+                            <label class="block text-sm font-bold text-text-main-light dark:text-text-main-dark mb-2">
+                                Дополнительные материалы (необязательно)
+                            </label>
+                            <input type="file" id="lessonFile"
+                                class="w-full rounded-xl bg-slate-50 dark:bg-slate-800 border-border-light dark:border-border-dark focus:ring-2 focus:ring-primary/50 outline-none p-3 transition-all text-sm file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-primary/10 file:text-primary hover:file:bg-primary/20">
+                        </div>
+
+                        <!-- Assignments Section -->
+                        <div class="border-t border-border-light dark:border-border-dark pt-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <label class="block text-lg font-bold text-text-main-light dark:text-text-main-dark">
+                                    Задания
+                                </label>
+                                <button type="button" id="addAssignmentBtn"
+                                    class="text-sm font-bold text-primary hover:bg-primary/10 px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-[18px]">add</span>
+                                    Добавить задание
+                                </button>
+                            </div>
+
+                            <div id="assignmentsContainer" class="space-y-4">
+                                <!-- Dynamic assignments will appear here -->
+                                <div class="text-center py-8 border-2 border-dashed border-slate-200 dark:border-slate-700 rounded-xl text-slate-400"
+                                    id="emptyAssignmentsMsg">
+                                    <span class="material-symbols-outlined text-4xl mb-2">assignment</span>
+                                    <p class="text-sm">Пока нет заданий. Нажмите "Добавить задание".</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Deadline -->
+                        <div>
+                            <label class="block text-sm font-bold text-text-main-light dark:text-text-main-dark mb-2">
+                                Дедлайн (срок сдачи)
+                            </label>
+                            <input type="datetime-local" id="deadline"
+                                class="w-full rounded-xl bg-slate-50 dark:bg-slate-800 border-border-light dark:border-border-dark focus:ring-2 focus:ring-primary/50 outline-none p-3 transition-all">
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="pt-4 flex gap-4">
+                            <button type="button" id="cancelBtn"
+                                class="flex-1 py-3 rounded-xl font-bold text-text-secondary-light dark:text-text-secondary-dark bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                                Отмена
+                            </button>
+                            <button type="submit"
+                                class="flex-1 py-3 rounded-xl font-bold bg-primary text-white hover:bg-primary-hover transition-colors shadow-lg shadow-blue-500/20">
+                                Сохранить
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Template for Assignment Item (Hidden) -->
+    <template id="assignmentTemplate">
+        <div
+            class="assignment-item bg-slate-50 dark:bg-slate-800/50 border border-border-light dark:border-border-dark rounded-xl p-4 relative group">
+            <button type="button"
+                class="remove-assignment-btn absolute top-3 right-3 text-slate-400 hover:text-red-500 transition-colors p-1"
+                title="Удалить">
+                <span class="material-symbols-outlined text-[20px]">delete</span>
+            </button>
+            <div class="flex flex-col gap-3 pr-8">
+                <div class="flex gap-2">
+                    <select
+                        class="assignment-type-select w-1/3 rounded-lg border-border-light dark:border-border-dark bg-white dark:bg-[#1a2632] text-sm focus:ring-primary/50">
+                        <option value="text">Вопрос / Текст</option>
+                        <option value="test">Тест</option>
+                        <option value="file">Загрузить файл</option>
+                    </select>
+                    <input type="text"
+                        class="assignment-title-input flex-1 rounded-lg border-border-light dark:border-border-dark bg-white dark:bg-[#1a2632] text-sm focus:ring-primary/50"
+                        placeholder="Название задания (Стр: Задание 1)">
+                </div>
+
+                <!-- Content Area based on type -->
+                <div class="assignment-content-area">
+                    <textarea
+                        class="assignment-content-text w-full rounded-lg border-border-light dark:border-border-dark bg-white dark:bg-[#1a2632] text-sm focus:ring-primary/50 p-3"
+                        rows="3" placeholder="Напишите вопросы или текст задания..."></textarea>
+
+                    <div class="assignment-content-file hidden">
+                        <label class="block text-xs font-bold text-slate-500 mb-1">Выберите файл:</label>
+                        <input type="file" class="w-full text-sm">
+                    </div>
+
+                    <div
+                        class="assignment-content-test hidden p-3 bg-white dark:bg-[#1a2632] rounded-lg border border-border-light dark:border-border-dark">
+                        <p class="text-xs text-yellow-600 font-medium mb-2">Введите вопросы теста в формате ниже:</p>
+                        <textarea class="w-full rounded border-slate-200 text-sm font-mono" rows="5" placeholder="1. Сколько букв в казахском алфавите?
+A) 42
+B) 40
+C) 38
+D) 44
+*Answer: A
+
+2. Следующий вопрос..."></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script type="module">
+        import { auth, db } from "./js/firebase-config.js";
+        import { addDoc, collection } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+        import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
+
+        const storage = getStorage();
+
+        // URL Params
+        const urlParams = new URLSearchParams(window.location.search);
+        const subjectId = urlParams.get('subjectId');
+        const classId = urlParams.get('classId');
+        const grade = urlParams.get('grade');
+
+        // Setup Back Link
+        const backLink = document.getElementById('backToTopics');
+        const kzLink = document.getElementById('kzLink');
+
+        if (backLink) {
+            let href = `topics_ru.html?subjectId=${subjectId}`;
+            if (classId) href += `&classId=${classId}`;
+            if (grade) href += `&grade=${grade}`;
+            backLink.href = href;
+        }
+
+        if (kzLink) {
+            let href = `add_topic.html?subjectId=${subjectId}`;
+            if (classId) href += `&classId=${classId}`;
+            if (grade) href += `&grade=${grade}`;
+            kzLink.href = href;
+        }
+
+        document.getElementById('cancelBtn').addEventListener('click', () => {
+            if (backLink) window.location.href = backLink.href;
+        });
+
+        // Logout
+        const logoutBtn = document.querySelector('.logout-btn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', async () => {
+                await signOut(auth);
+                window.location.href = 'index_ru.html';
+            });
+        }
+
+        // Auth Check
+        onAuthStateChanged(auth, (user) => {
+            if (!user) {
+                window.location.href = 'login_ru.html';
+            }
+        });
+
+        // --- Assignments Logic ---
+        const assignmentsContainer = document.getElementById('assignmentsContainer');
+        const addAssignmentBtn = document.getElementById('addAssignmentBtn');
+        const assignmentTemplate = document.getElementById('assignmentTemplate');
+        const emptyMsg = document.getElementById('emptyAssignmentsMsg');
+
+        addAssignmentBtn.addEventListener('click', () => {
+            const clone = assignmentTemplate.content.cloneNode(true);
+            const item = clone.querySelector('.assignment-item');
+
+            // Setup Type Switcher
+            const typeSelect = item.querySelector('.assignment-type-select');
+            const contentArea = item.querySelector('.assignment-content-area');
+            const textInput = contentArea.querySelector('.assignment-content-text');
+            const fileInput = contentArea.querySelector('.assignment-content-file');
+            const testInput = contentArea.querySelector('.assignment-content-test');
+
+            typeSelect.addEventListener('change', (e) => {
+                const type = e.target.value;
+                textInput.classList.add('hidden');
+                fileInput.classList.add('hidden');
+                testInput.classList.add('hidden');
+
+                if (type === 'text') {
+                    textInput.classList.remove('hidden');
+                    textInput.placeholder = "Напишите вопросы или текст задания...";
+                } else if (type === 'test') {
+                    testInput.classList.remove('hidden');
+                } else if (type === 'file') {
+                    fileInput.classList.remove('hidden');
+                }
+            });
+
+            // Remove Button
+            item.querySelector('.remove-assignment-btn').addEventListener('click', () => {
+                item.remove();
+                if (assignmentsContainer.querySelectorAll('.assignment-item').length === 0) {
+                    emptyMsg.classList.remove('hidden');
+                }
+            });
+
+            emptyMsg.classList.add('hidden');
+            assignmentsContainer.appendChild(item);
+        });
+
+
+        // File Upload Helper
+        async function uploadFile(file, path) {
+            const storageRef = ref(storage, path + '/' + Date.now() + '_' + file.name);
+            await uploadBytes(storageRef, file);
+            return await getDownloadURL(storageRef);
+        }
+
+        // Form Submission
+        document.getElementById('createTopicForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            if (!subjectId) {
+                alert('Ошибка: Не указан предмет');
+                return;
+            }
+
+            const submitBtn = e.target.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="material-symbols-outlined animate-spin">refresh</span> Сохранение...';
+
+            const title = document.getElementById('topicTitle').value;
+            const content = document.getElementById('topicContent').value; // Lecture Notes
+            const lessonDate = document.getElementById('lessonDate').value;
+            const deadline = document.getElementById('deadline').value;
+
+            // Lesson Material
+            const lessonFileInput = document.getElementById('lessonFile');
+            let lessonFileUrl = null;
+
+            try {
+                // Upload Lesson File if exists
+                if (lessonFileInput.files.length > 0) {
+                    lessonFileUrl = await uploadFile(lessonFileInput.files[0], 'lessons');
+                }
+
+                // Process Assignments
+                const assignmentItems = document.querySelectorAll('.assignment-item');
+                const assignments = [];
+
+                for (const item of assignmentItems) {
+                    const type = item.querySelector('.assignment-type-select').value;
+                    const title = item.querySelector('.assignment-title-input').value || 'Задание';
+                    let assignmentData = {
+                        type: type,
+                        title: title
+                    };
+
+                    if (type === 'text') {
+                        assignmentData.content = item.querySelector('.assignment-content-text').value;
+                    } else if (type === 'test') {
+                        assignmentData.content = item.querySelector('.assignment-content-test textarea').value;
+                    } else if (type === 'file') {
+                        const fileInput = item.querySelector('.assignment-content-file input[type="file"]');
+                        if (fileInput.files.length > 0) {
+                            assignmentData.url = await uploadFile(fileInput.files[0], 'assignments');
+                        }
+                    }
+                    assignments.push(assignmentData);
+                }
+
+
+                await addDoc(collection(db, "topics"), {
+                    subjectId: subjectId,
+                    classId: classId || null,
+                    grade: grade || null,
+                    title: title,
+                    content: content, // New Lecture Notes
+                    lessonDate: lessonDate,
+                    lessonFileUrl: lessonFileUrl,
+                    assignments: assignments, // New Array Structure
+                    deadline: deadline,
+                    createdAt: new Date().toISOString()
+                });
+
+                alert("Тема, материал и задания успешно сохранены!");
+
+                // Redirect back
+                if (backLink) window.location.href = backLink.href;
+
+            } catch (error) {
+                console.error("Error creating topic:", error);
+                alert("Ошибка при сохранении: " + error.message);
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalText;
+            }
+        });
+    </script>
+</body>
+
+</html>
